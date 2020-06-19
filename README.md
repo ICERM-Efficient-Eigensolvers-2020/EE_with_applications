@@ -1,8 +1,8 @@
-#Design notes
+# Design notes
 
-##**Part I: Power Iteration Method Implementation**
+## **Part I: Power Iteration Method Implementation**
 
-######***Power Iteration***
+###### ***Power Iteration***
 
 `def _PowerMethod_ (matrix: A, int: norm_indicator, float: terminate_range)       
  `   
@@ -25,19 +25,19 @@
            
         4. return v_k, \lambda_k
 
- ######****Converge Process Print :**** 
+ ###### ****Converge Process Print :**** 
  
 `` def print_log(index, eigenvector_list, eigenvalue_list, err_list)``
     
     
     
-##**Part II: Page Rank Algorithm**
+## **Part II: Page Rank Algorithm**
 
 We are calculating the limiting probability distribution of webpages utilizing power method, which is similar to the Markov Process.
     
 With one thing in mind, 1.0 is the largest eigenvalue for the probability transmission matrix A. (proof)
     
-######***Page Rank without Dangling Nodes*** 
+###### ***Page Rank without Dangling Nodes*** 
     
 `def PageRank(diGraph, weight)`
     
