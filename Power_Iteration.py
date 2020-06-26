@@ -1,6 +1,6 @@
 import numpy as np
 from tabulate import tabulate
-
+import matplotlib.pyplot as plt
 info_list = []
 def PowerMethod(A, norm_indicator, converge_range):
 
@@ -41,6 +41,17 @@ def PowerMethod(A, norm_indicator, converge_range):
         idx = idx + 1
 
     print_log(idx, v_list, lambda_list, diff_list)
+
+    #plot lambda_list
+    x = [i for i in range(idx+1)]
+    if len(x) > 20:
+        x = x[:21]
+        diff_list = diff_list[:21]
+
+
+    plt.plot(x, diff_list)
+    plt.savefig("difference_list_with" + str(norm_indicator) + "normalization")
+    plt.show()
     return v_list[-1], lambda_list[-1]
 
 def print_log(idx, v_list, lambda_list, diff_list):
