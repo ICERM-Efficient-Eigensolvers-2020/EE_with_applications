@@ -6,11 +6,19 @@ import scipy
 from matplotlib import pyplot as plt
 
 def power_iteration_application_test():
-    A = np.array([[1.5, 0.5], [0.5, 1.5]])
-    norm_indicator = True
-    dom_eigenvector, dom_eigenvalue = pi.PowerMethod(A, norm_indicator, 0.01)
+    A = np.array([[0.8, 0.7], [0.2, 0.3]])
+    print(A)
+    norm_indicator = False
+    dom_eigenvector, dom_eigenvalue = pi.PowerMethod(A, norm_indicator, 0.0001)
     print(dom_eigenvalue)
     print(dom_eigenvector)
+
+    norm_indicator = True
+    dom_eigenvector, dom_eigenvalue = pi.PowerMethod(A, norm_indicator, 0.0001)
+    print(dom_eigenvalue)
+    print(dom_eigenvector)
+
+
 
 def page_rank_application_test():
     G = nx.DiGraph()
@@ -49,8 +57,8 @@ if __name__ == '__main__':
     print("###Power Iteration Test###")
     power_iteration_application_test()
 
-    print("###Page Rank Test###")
-    page_rank_application_test()
+    #print("###Page Rank Test###")
+    #page_rank_application_test()
 
 
 

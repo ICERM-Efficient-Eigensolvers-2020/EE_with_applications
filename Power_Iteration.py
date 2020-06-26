@@ -29,10 +29,12 @@ def PowerMethod(A, norm_indicator, converge_range):
     while diff_list[idx] > converge_range:
         #new vector
         v_new = A.dot(v_list[idx])
-        v_list.append(v_new)
+
         if norm_indicator:
-            v_new = v_new / np.linalg.norm(v_new) 
-        lambda_new = v_new.dot(A.dot(v_new))    
+            v_new = v_new / np.linalg.norm(v_new)
+
+        v_list.append(v_new)
+        lambda_new = v_new.dot(A.dot(v_new))
         lambda_list.append(lambda_new)
         diff = np.abs(lambda_new - lambda_list[idx])
         diff_list.append(diff)
