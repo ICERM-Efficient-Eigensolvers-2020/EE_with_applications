@@ -33,7 +33,11 @@ def get_all_website_links(url):
     urls = set()
     # domain name of the URL without the protocol
     domain_name = urlparse(url).netloc
-    soup = BeautifulSoup(requests.get(url).content, "html.parser")
+
+    try:
+        soup = BeautifulSoup(requests.get(url).content, "html.parser")
+    except:
+        pass
 
     for a_tag in soup.findAll("a"):
         href = a_tag.attrs.get("href")
@@ -99,7 +103,7 @@ if __name__ == "__main__":
     idx = 0
 
     url = "https://icerm.brown.edu"
-    max_urls = 30
+    max_urls = 50
     url_dict[url] = idx
     crawl(url, max_urls=max_urls)
 
