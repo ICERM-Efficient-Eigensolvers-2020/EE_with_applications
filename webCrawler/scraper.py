@@ -55,10 +55,10 @@ def get_all_website_links(url):
         if domain_name not in href:
             # external link
             if href not in external_urls:
-                print(f"{GRAY}[!] External link: {href}{RESET}")
+                #print(f"{GRAY}[!] External link: {href}{RESET}")
                 external_urls.add(href)
             continue
-        print(f"{GREEN}[*] Internal link: {href}{RESET}")
+        #print(f"{GREEN}[*] Internal link: {href}{RESET}")
         urls.add(href)
         internal_urls.add(href)
 
@@ -72,7 +72,7 @@ def get_all_website_links(url):
 # number of urls visited so far will be stored here
 total_urls_visited = 0
 
-def crawl(url, max_urls=50):
+def crawl(url, max_urls):
 
     """
     Crawls a web page and extracts all links.
@@ -118,3 +118,7 @@ if __name__ == "__main__":
     with open(f"{domain_name}_external_links.txt", "w") as f:
         for external_link in external_urls:
             print(external_link.strip(), file=f)
+    #adjacency matrix
+    print(len(diG.nodes))
+    A = nx.adjacency_matrix(diG)
+
