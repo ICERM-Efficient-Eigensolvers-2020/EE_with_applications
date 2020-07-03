@@ -1,7 +1,9 @@
 import numpy as np
 from tabulate import tabulate
 import matplotlib.pyplot as plt
+
 info_list = []
+
 def PowerMethod(A, norm_indicator, converge_range):
 
     r, c = A.shape

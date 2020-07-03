@@ -22,7 +22,7 @@ def is_valid(url):
     parsed = urlparse(url)
     return bool(parsed.netloc) and bool(parsed.scheme)
 
-def get_all_website_links(url):
+def get_all_website_links(url, max_urls):
     """
     Returns all URLs that is found on `url` in which it belongs to the same website
     """
@@ -35,43 +35,53 @@ def get_all_website_links(url):
     domain_name = urlparse(url).netloc
 
     try:
+
         soup = BeautifulSoup(requests.get(url).content, "html.parser")
+        for a_tag in soup.findAll("a"):
+            href = a_tag.attrs.get("href")
+            if href == "" or href is None:
+                # href empty tag
+                continue
+
+            # join the URL if it's relative (not absolute link)
+            href = urljoin(url, href)
+            parsed_href = urlparse(href)
+            # remove URL GET parameters, URL fragments, etc.
+            href = parsed_href.scheme + "://" + parsed_href.netloc + parsed_href.path
+            if not is_valid(href):
+                # not a valid URL
+                continue
+            if href in internal_urls:
+                # already in the set
+                continue
+            if domain_name not in href:
+                # external link
+                if href not in external_urls:
+                    #print(f"{GRAY}[!] External link: {href}{RESET}")
+                    external_urls.add(href)
+                continue
+
+            if idx >= max_urls:
+                return urls
+
+            #real new child
+            if href not in url_dict.keys():
+                idx = idx + 1
+                diG.add_node(idx)
+                url_dict[href] = idx
+
+            #print(f"{GREEN}[*] Internal link: {href}{RESET}")
+            urls.add(href)
+            internal_urls.add(href)
+
+            # add the internal link to url_dict
+
+
     except:
         pass
 
-    for a_tag in soup.findAll("a"):
-        href = a_tag.attrs.get("href")
-        if href == "" or href is None:
-            # href empty tag
-            continue
-
-        # join the URL if it's relative (not absolute link)
-        href = urljoin(url, href)
-        parsed_href = urlparse(href)
-        # remove URL GET parameters, URL fragments, etc.
-        href = parsed_href.scheme + "://" + parsed_href.netloc + parsed_href.path
-        if not is_valid(href):
-            # not a valid URL
-            continue
-        if href in internal_urls:
-            # already in the set
-            continue
-        if domain_name not in href:
-            # external link
-            if href not in external_urls:
-                #print(f"{GRAY}[!] External link: {href}{RESET}")
-                external_urls.add(href)
-            continue
-        #print(f"{GREEN}[*] Internal link: {href}{RESET}")
-        urls.add(href)
-        internal_urls.add(href)
-
-        #add the internal link to url_dict
-        idx = idx + 1
-        diG.add_node(idx)
-        url_dict[href] = idx
-
     return urls
+
 
 # number of urls visited so far will be stored here
 total_urls_visited = 0
@@ -87,24 +97,29 @@ def crawl(url, max_urls):
     global diG
     global url_dict
     global total_urls_visited
-    total_urls_visited += 1
-    links = get_all_website_links(url)
-    parent = url_dict[url]
-    for link in links:
-        child = url_dict[link]
-        diG.add_edge(parent, child)
-        if total_urls_visited > max_urls:
-            break
-        crawl(link, max_urls=max_urls)
+    global idx
+    if idx >= max_urls:
+        return
 
-if __name__ == "__main__":
+    total_urls_visited += 1
+
+    if total_urls_visited > max_urls:
+        print("!!!Let's dance!!!!")
+    else:
+        links = get_all_website_links(url, max_urls)
+        parent = url_dict[url]
+        for link in links:
+            child = url_dict[link]
+            diG.add_edge(parent, child)
+            crawl(link, max_urls=max_urls)
+
+def scraper(url, max_urls):
     diG = nx.DiGraph()
     url_dict = {}
     idx = 0
 
-    url = "https://icerm.brown.edu"
-    max_urls = 50
     url_dict[url] = idx
+    diG.add_node(idx)
     crawl(url, max_urls=max_urls)
 
     print("[+] Total Internal links:", len(internal_urls))
@@ -122,7 +137,8 @@ if __name__ == "__main__":
     with open(f"{domain_name}_external_links.txt", "w") as f:
         for external_link in external_urls:
             print(external_link.strip(), file=f)
+
     #adjacency matrix
-    print(len(diG.nodes))
-    A = nx.adjacency_matrix(diG)
+    A = nx.to_numpy_matrix(diG)
+    return A, diG
 

@@ -1,9 +1,12 @@
+import scraper
+
 import Power_Iteration as pi
 import numpy as np
 import networkx as nx
 import scipy
 
 from matplotlib import pyplot as plt
+import ../WebCrawler/scraper.scraper as scraper
 
 def power_iteration_application_test():
     A = np.array([[1.5, 0.5], [0.5, 1.5]])
@@ -29,25 +32,59 @@ def page_rank_application_test():
     print("Limiting Distribution: ")
     print(PageRank(G, 0.15))
 
-
-def PageRank(G, weight):
+def stochastic_transition_matrix(G, weight, adaptive):
 
     Aj = nx.to_numpy_matrix(G).A
     N = len(G.nodes)
+    v = np.empty()
+    v.fill(1/N)
 
-    A = np.zeros(shape=(N,N))
-    S = np.ones(shape = (N,N))
-    S = np.multiply(S, 1/N)
-
+    P = np.zeros(shape=(N, N))
+    dangling_notes = set()
     for j, node in enumerate(G.nodes()):
         out_deg = G.out_degree(node)
+        if out_deg == 0:
+            dangling_notes.add(out_deg)
+        else:
+            for i in range(N):
+                P[i][j] = Aj[i][j] / out_deg
+
+
+    if adaptive:
+        return P
+    else:
+        #test dangling nodes
+        d = np.empty()
         for i in range(N):
+            if i in dangling_notes:
+                d[i] = 1
+        D = d.dot(v)
 
-            A[i][j] = Aj[i][j]/out_deg
 
+
+
+        S = np.ones(shape=(N, N))
+        S = np.multiply(S, 1 / N)
     Aw = np.multiply(A, 1 - weight)
     Sw = np.multiply(S, weight)
     M = Aw + Sw
+    return M
+
+
+
+def multiplication_with_P(P, c, x):
+    N = A.shape[0]
+    v = np.empty(N)
+    v.fill(1/N)
+    y = np.multiply(P, c).dot(x)
+    w = np.linalg.norm(x,1) - np.linalg.norm(y,1)
+    y = y + np.multiply(v,w)
+    return y
+
+
+def PageRank(G, weight):
+
+    M = stochastic_transition_matrix(G, weight)
 
     return pi.PowerMethod(M,True, 0.01)[0]
 
