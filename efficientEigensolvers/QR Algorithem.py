@@ -16,13 +16,19 @@ def qr_householder(x):
     Q, R = npy.linalg.qr(x)
     return Q, R 
 
-def qr_Algorithm_HH(x,iterations):
+def qr_Algorithem_HH(x,iterations):
+    m, n = x.shape
+    Q_last = npy.identity(n)
     for _ in range(iterations):
         Q, R = qr_householder(x)
-        x = npy.dot(R, Q)       # This update matrix A, by dot product of reverse QR 
+        # This update matrix A, by dot product of reverse QR 
+        x = npy.dot(R, Q) 
+        
+        eigenvectors = npy.dot(Q_last, Q)
+        Q_last = eigenvectors
         
     eigenvalues = npy.diag(x)  #outputs only the values on the main diaginal
-    return eigenvalues
+    return eigenvalues, eigenvectors
 
 
 ### Gram-Schmidt Process
@@ -45,10 +51,15 @@ def qr_GS(x):
    
     return Q, R
 
-def qr_Algorithm(x,iterations):
+def qr_Algorithem(x,iterations):
+    m, n = x.shape
+    Q_last = npy.identity(n)
     for _ in range(iterations):
         Q, R = qr_GS(x)
-        x = npy.dot(R, Q)    # This update matrix A, by dot product of reverse QR 
+        # This update matrix A, by dot product of reverse QR 
+        x = npy.dot(R, Q) 
         
+        eigenvectors = npy.dot(Q_last, Q)
+        Q_last = eigenvectors
     eigenvalues = npy.diag(x)  #outputs only the values on the main diaginal
-    return eigenvalues
+    return eigenvalues, eigenvectors
