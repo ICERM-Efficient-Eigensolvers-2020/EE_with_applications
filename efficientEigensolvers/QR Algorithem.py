@@ -16,7 +16,7 @@ def qr_householder(x):
     Q, R = npy.linalg.qr(x)
     return Q, R 
 
-def qr_Algorithem_HH(x,iterations):
+def qr_Algorithm_HH(x,iterations):
     for _ in range(iterations):
         Q, R = qr_householder(x)
         x = npy.dot(R, Q)       # This update matrix A, by dot product of reverse QR 
@@ -45,7 +45,7 @@ def qr_GS(x):
    
     return Q, R
 
-def qr_Algorithem(x,iterations):
+def qr_Algorithm(x,iterations):
     for _ in range(iterations):
         Q, R = qr_GS(x)
         x = npy.dot(R, Q)    # This update matrix A, by dot product of reverse QR 
