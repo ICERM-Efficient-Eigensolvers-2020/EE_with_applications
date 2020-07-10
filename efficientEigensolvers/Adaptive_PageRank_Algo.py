@@ -1,7 +1,7 @@
 import numpy as np
 from tabulate import tabulate
 import matplotlib.pyplot as plt
-import Page_Rank_Algo as pr
+import Page_Rank_Utils as pru
 
 
 def detectedConverged(y,x,epsilon):
@@ -27,7 +27,7 @@ def filter(A_prime, x_prime, N, C):
 
 def Filter_APR(G, weight, period):
 
-    P = pr.stochastic_transition_matrix(G, weight)
+    P = pru.stochastic_transition_matrix(G, weight, True)
     n = P.shape[0]
 
     # initialize eigenvectors
