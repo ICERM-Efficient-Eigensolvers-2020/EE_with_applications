@@ -16,7 +16,7 @@ def qr_householder(x):
     Q, R = npy.linalg.qr(x)
     return Q, R 
 
-def qr_Algorithm_HH(x,iterations):
+def qr_Algorithm_HH(x, iterations):
     m, n = x.shape
     Q_last = npy.identity(n)
     for _ in range(iterations):
@@ -51,7 +51,7 @@ def qr_GS(x):
    
     return Q, R
 
-def qr_Algorithm(x,iterations):
+def qr_Algorithm_GS(x, iterations):
     m, n = x.shape
     Q_last = npy.identity(n)
     for _ in range(iterations):

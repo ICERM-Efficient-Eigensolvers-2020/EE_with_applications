@@ -1,9 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
+import os
+THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
 info_list = []
-def InverseMethod(A, converge_range):
-    
+
+def InverseMethod(A, converge_range=0.0001, file_path="" ):
+
     r, c = A.shape
 
     if r != c:
@@ -38,7 +40,8 @@ def InverseMethod(A, converge_range):
         diff = np.abs(lambda_new - lambda_list[idx])
         diff_list.append(diff)
         idx = idx + 1
-        
+
+
     print_log(idx, vec_list, lambda_list, diff_list)
 
     #plot lambda_list
@@ -49,8 +52,12 @@ def InverseMethod(A, converge_range):
 
 
     plt.plot(x, diff_list)
+    plt.title("Inverse Iteration Lambda Difference")
+    plt.xlabel('iterations')
+    plt.ylabel('lambda difference')
+    plt.savefig(file_path+'/II_difference_list_plot.png')
     plt.show()
-    plt.savefig("II_difference_list_plot") 
+
     return vec_list[-1], lambda_list[-1]
 
 def print_log(idx, vec_list, lambda_list, diff_list):
@@ -66,6 +73,7 @@ def print_log(idx, vec_list, lambda_list, diff_list):
 
 
 #Examples to run on
+"""
 B = np.array([[1.5, 0.5], [0.5, 1.5]])
 C = np.array([[2, 1], [2, 3]]) # eigenval of smallest magnitude of C is 1 
 D = np.array([[2, 2, -1], [-5, 9, -3], [-4, 4, 1]]) # eigenvals of D are 3, 4, and 5 
@@ -73,3 +81,4 @@ E = np.array([[-4, 1, 1], [0, 3, 1], [-2, 0, 15]]) # eigenvals of E are ~ -3.909
 F = np.array([[-6, 3], [4, 5]]) #eigenval of smallest magnitude of F is 6 with corresponding eigenvec [1, 4]
 G = np.array([[0.8, 0.3], [0.2, 0.7]])
 InverseMethod(D, 0.0001)
+"""

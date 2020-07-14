@@ -1,8 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import os
+THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
 
 info_list = []
-def InverseShift(A, mu, converge_range):
+def InverseShift(A, mu=10, converge_range=0.0001, file_path=""):
     
     r, c = A.shape
 
@@ -52,8 +54,12 @@ def InverseShift(A, mu, converge_range):
 
 
     plt.plot(x, diff_list)
+    plt.title("Inverse Iteration with Shift Lambda Difference")
+    plt.xlabel('iterations')
+    plt.ylabel('lambda difference')
+    plt.savefig(file_path+ "/IwS_difference_list_plot")
     plt.show()
-    plt.savefig("IwS_difference_list_plot") 
+
     return vec_list[-1], lambda_list[-1]
 
 
@@ -67,8 +73,9 @@ def print_log(idx, vec_list, lambda_list, diff_list):
     print('Eigenvalue:', sm_eig_val)
     print('Corresponding Eigenvector:', cor_eig_vec)
 
-
+"""
 #Examples to run on
 D = np.array([[2, 2, -1], [-5, 9, -3], [-4, 4, 1]]) # eigenvals of D are 3, 4, and 5 
 E = np.array([[-4, 1, 1], [0, 3, 1], [-2, 0, 15]]) # eigenvals of E are ~ -3.9095, 3.0243 and 14.8852
 InverseShift(E, 10, 0.00001)
+"""
