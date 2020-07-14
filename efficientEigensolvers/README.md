@@ -71,3 +71,17 @@ The QR algorithm is a program that works to calculate the eigenvalues and eigenv
 - Input: square matrix A, normalize indicator, termination range
 	
 - Output: Q and R matricies  
+
+
+
+## **Part IV: Inverse Power Iteration Method**
+
+###### ***Inverse Iteration***
+
+`def _PowerMethod_ (matrix: A, int: norm_indicator, float: terminate_range)`   
+     
+- Effect: Produce a sequence of vectors that converges to an eigenvector corresponding to the eigenvalue of smallest magnitude of input matrix A
+            
+- Input: square matrix A, convergence range
+	
+- Output: smallest eigenvalue and its corresponding eigenvector
