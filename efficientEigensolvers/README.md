@@ -61,13 +61,4 @@ With one thing in mind, 1.0 is the largest eigenvalue for the probability transm
     
  
 
-## **Part III: QR Algorithm**
 
-The QR algorithm is a program that works to calculate the eigenvalues and eigenvectors of a matrix.
-
-###### ***QR Decomposition***
-- Effect: Produce two matricies whose produce equals the inputted matrix A 
-            
-- Input: square matrix A, normalize indicator, termination range
-	
-- Output: Q and R matricies  

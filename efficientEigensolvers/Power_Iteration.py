@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 info_list = []
 
-def PowerMethod(A, norm_indicator, converge_range):
+def PowerMethod(A, norm_indicator=True, converge_range=0.0001):
 
     r, c = A.shape
 
@@ -50,7 +50,6 @@ def PowerMethod(A, norm_indicator, converge_range):
         x = x[:21]
         diff_list = diff_list[:21]
 
-
     plt.plot(x, diff_list)
     plt.savefig("difference_list_with" + str(norm_indicator) + "normalization")
     plt.show()
@@ -58,6 +57,6 @@ def PowerMethod(A, norm_indicator, converge_range):
 
 def print_log(idx, v_list, lambda_list, diff_list):
     info_list = [[i,v_list[i],lambda_list[i],diff_list[i]] for i in range(idx)]
-    print(tabulate(info_list, headers=["iteration","eigenvector", "eigenvalue","err"]))
+    print(tabulate(info_list, headers=["iteration","eigenvector", "eigenvalue","lambda_diff"]))
 
 

@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 import colorama
 import networkx as nx
 
+
 # init the colorama module
 colorama.init()
 GREEN = colorama.Fore.GREEN
@@ -35,7 +36,6 @@ def get_all_website_links(url, max_urls):
     domain_name = urlparse(url).netloc
 
     try:
-
         soup = BeautifulSoup(requests.get(url).content, "html.parser")
         for a_tag in soup.findAll("a"):
             href = a_tag.attrs.get("href")
@@ -75,8 +75,6 @@ def get_all_website_links(url, max_urls):
             internal_urls.add(href)
 
             # add the internal link to url_dict
-
-
     except:
         pass
 
@@ -98,6 +96,7 @@ def crawl(url, max_urls):
     global url_dict
     global total_urls_visited
     global idx
+
     if idx >= max_urls:
         return
 
@@ -114,6 +113,11 @@ def crawl(url, max_urls):
             crawl(link, max_urls=max_urls)
 
 def scraper(url, max_urls):
+    global idx
+    global diG
+    global url_dict
+    global total_urls_visited
+
     diG = nx.DiGraph()
     url_dict = {}
     idx = 0
@@ -140,5 +144,5 @@ def scraper(url, max_urls):
 
     #adjacency matrix
     A = nx.to_numpy_matrix(diG)
-    return A, diG
+    return A, diG, url_dict
 

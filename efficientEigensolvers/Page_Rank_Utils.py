@@ -1,9 +1,7 @@
-import scraper
 
 import Power_Iteration as pi
 import numpy as np
 import networkx as nx
-import scipy
 
 from matplotlib import pyplot as plt
 
@@ -34,10 +32,11 @@ def page_rank_application_test():
 
 
 
-def stochastic_transition_matrix_from_G(G, weight, adaptive):
+def stochastic_transition_matrix_from_G(G, adaptive, weight=0.15):
     Aj = nx.to_numpy_matrix(G).A
+
     N = len(G.nodes)
-    v = np.empty()
+    v = np.empty(shape=(N,1))
     v.fill(1/N)
 
     P = np.zeros(shape=(N, N))
@@ -45,20 +44,23 @@ def stochastic_transition_matrix_from_G(G, weight, adaptive):
     for j, node in enumerate(G.nodes()):
         out_deg = G.out_degree(node)
         if out_deg == 0:
-            dangling_notes.add(out_deg)
+            dangling_notes.add(j)
+            for i in range(N):
+                P[i][j] = 0
         else:
             for i in range(N):
-                P[i][j] = Aj[i][j] / out_deg
+                P[i][j] = Aj[j][i] / out_deg
 
     if adaptive:
         return P
     else:
         #test dangling nodes
-        d = np.empty()
+        d = np.empty(shape=(1,N))
+        d.fill(0)
         for i in range(N):
             if i in dangling_notes:
-                d[i] = 1
-        D = d.dot(v)
+                d[0][i] = 1
+        D = v.dot(d)
 
     P_prime = P + D
     S = np.ones(shape=(N, N))
