@@ -62,7 +62,7 @@ if __name__ == '__main__':
     """
     #comment this out and change your func if you don't want to use shell
     url = "https://icerm.brown.edu/"
-    max_urls = 10
+    max_urls = 100
     func = PowerMethod
 
     web_scrawler_application(url, max_urls, func)
