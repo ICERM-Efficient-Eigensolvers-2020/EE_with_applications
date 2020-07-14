@@ -61,9 +61,8 @@ With one thing in mind, 1.0 is the largest eigenvalue for the probability transm
     
  
 
+## **Part III: QR Algorithm**
 
-<<<<<<< HEAD
-=======
 The QR algorithm is a program that works to calculate the eigenvalues and eigenvectors of a matrix.
 
 ###### ***QR Decomposition***
@@ -72,18 +71,3 @@ The QR algorithm is a program that works to calculate the eigenvalues and eigenv
 - Input: square matrix A, normalize indicator, termination range
 	
 - Output: Q and R matricies  
-
-
-
-## **Part IV: Inverse Power Iteration Method**
-
-###### ***Inverse Iteration***
-
-`def _InverseMethod_ (matrix: A, float: converge_range)`   
-     
-- Effect: Produce a sequence of vectors that converges to an eigenvector corresponding to the eigenvalue of smallest magnitude of input matrix A
-            
-- Input: square matrix A, convergence range
-	
-- Output: smallest eigenvalue and its corresponding eigenvector
->>>>>>> 82fd3364d34ae0f1093b152b43941c79ab9c3706
