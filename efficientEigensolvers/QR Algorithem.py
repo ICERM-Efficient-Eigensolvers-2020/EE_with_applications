@@ -63,3 +63,22 @@ def qr_Algorithem(x,iterations):
         Q_last = eigenvectors
     eigenvalues = npy.diag(x)  #outputs only the values on the main diaginal
     return eigenvalues, eigenvectors
+
+
+### QR Gram-Schmidt with Shift 
+def shiftedQR_Algorithem(x, iterations):
+    m, n = x.shape
+    I = npy.identity(n)
+    Q_last = npy.identity(n)
+    
+    for _ in range(iterations):
+        μ = x[[n-1],[n-1]]         # shift: μ = a_nn
+        Q, R = qr_GS((x - (μ*I)))  # A − μI = QR: preforms the gram schmidt process with shift
+                                     
+        x = npy.dot(R,Q) + (μ*I)   # This update matrix A, by dot product of reverse QR and adding back the shift
+        
+        eigenvectors = npy.dot(Q_last, Q)
+        Q_last = eigenvectors
+        
+    eigenvalues = npy.diag(x)  #outputs only the values on the main diaginal
+    return eigenvalues, eigenvectors 
