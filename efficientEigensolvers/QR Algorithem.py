@@ -1,4 +1,4 @@
-## QR Algorithem
+## QR Algorithm
 # Author: Kelly Rivera
 
 # This code is an implementation of a PageRank Algorithm variant using QR Decomposition
@@ -16,7 +16,7 @@ def qr_householder(x):
     Q, R = npy.linalg.qr(x)
     return Q, R 
 
-def qr_Algorithem_HH(x,iterations):
+def qr_Algorithm_HH(x,iterations):
     m, n = x.shape
     Q_last = npy.identity(n)
     for _ in range(iterations):
@@ -51,7 +51,7 @@ def qr_GS(x):
    
     return Q, R
 
-def qr_Algorithem(x,iterations):
+def qr_Algorithm(x,iterations):
     m, n = x.shape
     Q_last = npy.identity(n)
     for _ in range(iterations):
@@ -66,7 +66,7 @@ def qr_Algorithem(x,iterations):
 
 
 ### QR Gram-Schmidt with Shift 
-def shiftedQR_Algorithem(x, iterations):
+def shiftedQR_Algorithm(x, iterations):
     m, n = x.shape
     I = npy.identity(n)
     Q_last = npy.identity(n)
