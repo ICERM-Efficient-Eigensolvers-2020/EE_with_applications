@@ -13,7 +13,7 @@ import csv
 import time
 import numpy as np
 import ast
-
+import re
 
 def Stochastic_matrix_test():
     diG = nx.DiGraph()
@@ -28,7 +28,10 @@ def Stochastic_matrix_test():
     #print(M)
 
 def web_scrawler_application(url, max_urls,  func_list, weight=0.15):
+    url_w = url.replace('.', "_")
     url_w = url.replace('/', "")
+    url_w = re.sub('\https:$', '', url)
+    print(url_w)
     directory = f"test_result/{url_w}/{max_urls}"
     result_folder_path = os.path.join(THIS_FOLDER, directory)
     if not os.path.exists(result_folder_path):
