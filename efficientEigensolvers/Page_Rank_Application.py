@@ -15,6 +15,7 @@ import numpy as np
 import ast
 import re
 
+
 def Stochastic_matrix_test():
     diG = nx.DiGraph()
     #3 is a dangling node
@@ -35,6 +36,7 @@ def web_scrawler_application(url, max_urls,  func_list, weight=0.15):
     result_folder_path = os.path.join(THIS_FOLDER, directory)
     if not os.path.exists(result_folder_path):
         os.makedirs(result_folder_path)
+
     f1 = open(result_folder_path + "/page_rank_algorithms_comparison.txt", "w")
 
     stochastic_matrix_file = result_folder_path + "/prepared_matrix.npy"
