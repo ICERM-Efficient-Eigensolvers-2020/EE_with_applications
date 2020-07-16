@@ -61,7 +61,7 @@ def InverseMethod(A, converge_range=0.0001, file_path="" ):
     return vec_list[-1], lambda_list[-1]
 
 def print_log(idx, vec_list, lambda_list, diff_list):
-    info_list = [[i, v_list[i], lambda_list[i], diff_list[i]] for i in range(idx)]
+    info_list = [[i, vec_list[i], lambda_list[i], diff_list[i]] for i in range(idx)]
     print(file_path)
     with open(file_path + '/Inverse_Iteration_performance.txt', 'w') as outputfile:
         outputfile.write(tabulate(info_list, headers=["iteration","eigenvector", "eigenvalue","lambda_diff"]))
