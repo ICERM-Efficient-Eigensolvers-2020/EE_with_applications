@@ -40,7 +40,7 @@ def web_scrawler_application(url, max_urls,  func_list, weight=0.15):
     f1 = open(result_folder_path + "/page_rank_algorithms_comparison.txt", "w")
 
     stochastic_matrix_file = result_folder_path + "/prepared_matrix.npy"
-    internal_url_dict_file = result_folder_path + "/internal_url_dict.text"
+    internal_url_dict_file = result_folder_path + "/internal_url_dict.txt"
     if not os.path.exists(stochastic_matrix_file) or not os.path.exists(internal_url_dict_file):
         A, diG, internal_url_dict = web_scraper.scraper(url, max_urls)
         M = pru.stochastic_transition_matrix_from_G(diG, False, weight)
@@ -54,14 +54,14 @@ def web_scrawler_application(url, max_urls,  func_list, weight=0.15):
         contents = f2.read()
         internal_url_dict = ast.literal_eval(contents)
         f2.close()
-
+        converge_range = 0.0001
     for func in func_list:
             t_start= time.time()
             if func in [qr_Algorithm_GS, qr_Algorithm_HH, shiftedQR_Algorithm]:
-                eigenvec, eigenval = func(M, converge_range=0.0001)
+                eigenvec, eigenval = func(M, converge_range=converge_range)
             else:
-                convergence_range = 0.0001
-                eigenvec, eigenval = func(M, converge_range=0.0001, file_path=result_folder_path)
+
+                eigenvec, eigenval = func(M, converge_range=converge_range, file_path=result_folder_path)
 
             t_end = time.time()
             time_length = t_end - t_start
@@ -73,15 +73,15 @@ def web_scrawler_application(url, max_urls,  func_list, weight=0.15):
                 page_rank_dict[page] = eigenvec[i]
 
 
-            page_rank_dict = {k: v for k, v in sorted(page_rank_dict.items(), key=lambda item: item[1], reverse=True)}
-            #print(page_rank_dict)
+            page_rank_dict = sorted(page_rank_dict.items(), reverse=True)
+
 
             fields = ['Link', 'Page Rank Score']
             with open(result_folder_path+f"/{func.__name__}_page_rank.csv", "w", newline='') as f:
                 writer = csv.writer(f)
                 writer.writerow(fields)
-                for k,v in page_rank_dict.items():
-                    writer.writerow([k,v])
+                for item in page_rank_dict:
+                    writer.writerow(item)
                 print(f"dominant eigenvector: {eigenvec}", file=f)
                 print(f"dominant eigenvalue: {eigenval}", file=f)
 
