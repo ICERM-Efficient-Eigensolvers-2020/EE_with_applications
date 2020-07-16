@@ -1,4 +1,5 @@
 import numpy as np
+from tabulate import tabulate
 import matplotlib.pyplot as plt
 import os
 THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
