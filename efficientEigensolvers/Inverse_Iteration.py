@@ -1,5 +1,4 @@
 import numpy as np
-from tabulate import tabulate
 import matplotlib.pyplot as plt
 import os
 THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
@@ -41,10 +40,9 @@ def InverseMethod(A, converge_range=0.0001, file_path="" ):
         diff = np.abs(lambda_new - lambda_list[idx])
         diff_list.append(diff)
         idx = idx + 1
-
-
+        
     print_log(idx, vec_list, lambda_list, diff_list)
-
+    
     #plot lambda_list
     x = [i for i in range(idx+1)]
     if len(x) > 20:
@@ -59,7 +57,9 @@ def InverseMethod(A, converge_range=0.0001, file_path="" ):
     plt.savefig(file_path+'/II_difference_list_plot.png')
     plt.show()
 
-    return vec_list[-1], lambda_list[-1]
+    vec_list[-1] = eigenvector
+    lambda_list[-1] = eigenvalue
+    return eigenvector, eigenvalue
 
 def print_log(idx, vec_list, lambda_list, diff_list):
     info_list = [[i, vec_list[i], lambda_list[i], diff_list[i]] for i in range(idx)]
