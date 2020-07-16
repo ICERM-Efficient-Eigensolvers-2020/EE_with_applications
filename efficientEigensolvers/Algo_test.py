@@ -31,13 +31,15 @@ def correctness_test(url, max_urls, func_list):
     eigenvec_np = v[:,idx]
     f.write(f"dominant eigenvector: {eigenvec_np}")
     # for new funcs
+
+    converge_range = 0.0001
     for func in func_list:
+
         if func in [qr_Algorithm_GS, qr_Algorithm_HH, shiftedQR_Algorithm]:
             iterations = M.shape[0]
-            eigenvec, eigenval = func(M, iterations=iterations)
+            eigenvec, eigenval = func(M, converge_range=converge_range)
         else:
-            convergence_range = 0.0001
-            eigenvec, eigenval = func(M, converge_range=convergence_range, file_path=result_folder_path)
+            eigenvec, eigenval = func(M, converge_range=converge_range, file_path=result_folder_path)
 
         dist = np.linalg.norm(eigenvec - eigenvec_np)
         f.write(f"\nDistance for np and {func.__name__}: {dist}")
@@ -48,6 +50,6 @@ def correctness_test(url, max_urls, func_list):
 
 if __name__ == '__main__':
     url = "https://icerm.brown.edu/"
-    max_urls = 30
+    max_urls = 10
     func_list = [PowerMethod]
     correctness_test(url, max_urls, func_list)
