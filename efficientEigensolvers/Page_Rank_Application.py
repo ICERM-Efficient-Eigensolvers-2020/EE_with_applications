@@ -91,7 +91,7 @@ def web_scrawler_application(url, max_urls,  func_list, weight=0.15):
 if __name__ == '__main__':
 
     print("###ICERM domain test###")
-    """
+
     import argparse
 
     parser = argparse.ArgumentParser(description="Link Extractor Tool with Python")
@@ -107,6 +107,7 @@ if __name__ == '__main__':
     #comment this out and change your func if you don't want to use shell
     url = "https://icerm.brown.edu/"
     max_urls = 30
+    """
     func_list = [PowerMethod, qr_Algorithm_HH, qr_Algorithm_GS, shiftedQR_Algorithm, InverseMethod, InverseShift]
 
     web_scrawler_application(url, max_urls, func_list)
