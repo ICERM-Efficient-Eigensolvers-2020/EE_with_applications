@@ -58,8 +58,7 @@ def web_scrawler_application(url, max_urls,  func_list, weight=0.15):
     for func in func_list:
             t_start= time.time()
             if func in [qr_Algorithm_GS, qr_Algorithm_HH, shiftedQR_Algorithm]:
-                iterations = M.shape[0]
-                eigenvec, eigenval = func(M,iterations=iterations)
+                eigenvec, eigenval = func(M, converge_range=0.0001)
             else:
                 convergence_range = 0.0001
                 eigenvec, eigenval = func(M, converge_range=0.0001, file_path=result_folder_path)
