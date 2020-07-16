@@ -64,15 +64,7 @@ def InverseShift(A, mu=10, converge_range=0.0001, file_path=""):
 
 
 def print_log(idx, vec_list, lambda_list, diff_list):
-    print("Inverse Iteration with Shift:")
-    print('Number of Iterations:', idx)
-    cor_eig_vec = vec_list[idx]
-    sm_eig_val = round(lambda_list[idx], 4)
-    inv_eig_val = np.reciprocal(sm_eig_val)
-    print('Eigenvalue:', sm_eig_val)
-    print('Corresponding Eigenvector:', cor_eig_vec)
-
-#Examples to run
-#D = np.array([[2, 2, -1], [-5, 9, -3], [-4, 4, 1]]) # eigenvals of D are 3, 4, and 5 
-#E = np.array([[-4, 1, 1], [0, 3, 1], [-2, 0, 15]]) # eigenvals of E are ~ -3.9095, 3.0243 and 14.8852
-#InverseShift(E, 10, 0.00001)
+    info_list = [[i, vec_list[i], lambda_list[i], diff_list[i]] for i in range(idx)]
+    print(file_path)
+    with open(file_path+'/Inverse_Shift_performance.txt', 'w') as outputfile:
+        outputfile.write(tabulate(info_list, headers=["iteration","eigenvector", "eigenvalue","lambda_diff"]))
