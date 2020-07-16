@@ -61,21 +61,7 @@ def InverseMethod(A, converge_range=0.0001, file_path="" ):
     return vec_list[-1], lambda_list[-1]
 
 def print_log(idx, vec_list, lambda_list, diff_list):
-    print("Inverse Iteration:")
-    print('Number of Iterations:', idx)
-    cor_eig_vec = vec_list[idx]
-    sm_eig_val = round(lambda_list[idx], 4)
-    inv_eig_val = np.reciprocal(sm_eig_val)
-    print('Smallest Eigenvalue:', sm_eig_val)
-    print('Corresponding Eigenvector:', cor_eig_vec)
-    print(diff_list[idx]) #don't really need this, just want to see it
-
-
-#Examples to run
-#B = np.array([[1.5, 0.5], [0.5, 1.5]])
-#C = np.array([[2, 1], [2, 3]]) # eigenval of smallest magnitude of C is 1 
-#D = np.array([[2, 2, -1], [-5, 9, -3], [-4, 4, 1]]) # eigenvals of D are 3, 4, and 5 
-#E = np.array([[-4, 1, 1], [0, 3, 1], [-2, 0, 15]]) # eigenvals of E are ~ -3.9095, 3.0243 and 14.8852
-#F = np.array([[-6, 3], [4, 5]]) #eigenval of smallest magnitude of F is 6 with corresponding eigenvec [1, 4]
-#G = np.array([[0.8, 0.3], [0.2, 0.7]])
-#InverseMethod(D, 0.0001)
+    info_list = [[i, v_list[i], lambda_list[i], diff_list[i]] for i in range(idx)]
+    print(file_path)
+    with open(file_path + '/Inverse_Iteration_performance.txt', 'w') as outputfile:
+        outputfile.write(tabulate(info_list, headers=["iteration","eigenvector", "eigenvalue","lambda_diff"]))
