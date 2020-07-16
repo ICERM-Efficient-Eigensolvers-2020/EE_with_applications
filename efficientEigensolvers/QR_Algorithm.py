@@ -34,7 +34,7 @@ def qr_Algorithm_HH(x, converge_range):
         Q_last = eigenvectors
         
     eigenvalues = npy.diag(x)  #outputs only the values on the main diaginal  
-    return eigenvalues, eigenvectors 
+    return eigenvectors, eigenvalues
 
 
 ## Gram-Schmidt Process
@@ -81,7 +81,7 @@ def qr_Algorithm_GS(x, converge_range):
         
     eigenvalues = npy.diag(x)  #outputs only the values on the main diaginal    
     
-    return eigenvalues, eigenvectors 
+    return eigenvectors, eigenvalues
 
 
 ## QR with Shift using the Gram-Schmidt precess 
@@ -110,4 +110,4 @@ def shiftedQR_Algorithm(x, converge_range):
         
     eigenvalues = npy.diag(x)  #outputs only the values on the main diaginal    
     
-    return eigenvalues, eigenvectors     
+    return eigenvectors, eigenvalues     
