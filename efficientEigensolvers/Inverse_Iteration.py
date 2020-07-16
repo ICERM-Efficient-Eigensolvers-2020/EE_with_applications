@@ -57,8 +57,8 @@ def InverseMethod(A, converge_range=0.0001, file_path="" ):
     plt.savefig(file_path+'/II_difference_list_plot.png')
     plt.show()
 
-    vec_list[-1] = eigenvector
-    lambda_list[-1] = eigenvalue
+    eigenvector = vec_list[-1]
+    eigenvalue = lambda_list[-1]
     return eigenvector, eigenvalue
 
 def print_log(idx, vec_list, lambda_list, diff_list):
