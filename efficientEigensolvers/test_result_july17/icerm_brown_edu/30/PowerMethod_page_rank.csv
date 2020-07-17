@@ -1,37 +1,37 @@
 Link,Page Rank Score
-https://icerm.brown.edu/,0.19545006283649988
-https://icerm.brown.edu/programs/,0.19545006283649988
-https://icerm.brown.edu/proposals/,0.19545006283649988
-https://icerm.brown.edu/summerug/,0.19545006283649988
-https://icerm.brown.edu/collaborate/,0.19545006283649988
-https://icerm.brown.edu/girlsgetmath/,0.19545006283649988
-https://icerm.brown.edu/reuf/,0.19545006283649988
-https://icerm.brown.edu/visit/,0.19545006283649988
-https://icerm.brown.edu/visit/facilities/,0.19545006283649988
-https://icerm.brown.edu/visit/travel/,0.19545006283649988
-https://icerm.brown.edu/visit/finance/,0.19545006283649988
-https://icerm.brown.edu/visit/providence/,0.19545006283649988
-https://icerm.brown.edu/pds/,0.19545006283649988
-https://icerm.brown.edu/visit/technology/,0.19545006283649988
-https://icerm.brown.edu/video_archive/,0.19545006283649988
-https://icerm.brown.edu/live-stream/,0.19545006283649988
-https://icerm.brown.edu/mathbytes/,0.19545006283649988
-https://icerm.brown.edu/about/,0.19545006283649988
-https://icerm.brown.edu/about/nsf/,0.19545006283649988
-https://icerm.brown.edu/about/people/,0.19545006283649988
-https://icerm.brown.edu/about/boards/,0.19545006283649988
-https://icerm.brown.edu/about/postdocs/,0.19545006283649988
-https://icerm.brown.edu/about/diversity/,0.19545006283649988
-https://icerm.brown.edu/about/jobs/,0.19545006283649988
-https://icerm.brown.edu/news/,0.19545006283649988
-https://icerm.brown.edu/support-icerm/,0.19545006283649988
-https://icerm.brown.edu/summerug/2020/,0.04747963766102847
-https://icerm.brown.edu/topical_workshops/tw-20-glu/,0.0410791663490998
-https://icerm.brown.edu/news/documents/Special_Call_Proposals.pdf,0.04005043398652057
-"https://icerm.brown.edu/materials/Abstracts/tw-20-glu/Inclusivity_in_mathematics_and_computer_discoveries_about_loops_on_surfaces_]_Moira_Chas,_Stony_Brook_University.pdf",0.03514605531984349
-dominant eigenvector: [0.19545006 0.19545006 0.19545006 0.19545006 0.19545006 0.19545006
- 0.19545006 0.19545006 0.19545006 0.19545006 0.19545006 0.19545006
- 0.19545006 0.19545006 0.19545006 0.19545006 0.19545006 0.19545006
- 0.19545006 0.19545006 0.19545006 0.19545006 0.19545006 0.19545006
- 0.19545006 0.19545006 0.04005043 0.04747964 0.04107917 0.03514606]
-dominant eigenvalue: 1.0000017524185758
+https://icerm.brown.edu/,0.1954288109995246
+https://icerm.brown.edu/programs/,0.1954288109995246
+https://icerm.brown.edu/proposals/,0.1954288109995246
+https://icerm.brown.edu/summerug/,0.1954288109995246
+https://icerm.brown.edu/collaborate/,0.1954288109995246
+https://icerm.brown.edu/girlsgetmath/,0.1954288109995246
+https://icerm.brown.edu/reuf/,0.1954288109995246
+https://icerm.brown.edu/visit/,0.1954288109995246
+https://icerm.brown.edu/visit/facilities/,0.1954288109995246
+https://icerm.brown.edu/visit/travel/,0.1954288109995246
+https://icerm.brown.edu/visit/finance/,0.1954288109995246
+https://icerm.brown.edu/visit/providence/,0.1954288109995246
+https://icerm.brown.edu/pds/,0.1954288109995246
+https://icerm.brown.edu/visit/technology/,0.1954288109995246
+https://icerm.brown.edu/video_archive/,0.1954288109995246
+https://icerm.brown.edu/live-stream/,0.1954288109995246
+https://icerm.brown.edu/mathbytes/,0.1954288109995246
+https://icerm.brown.edu/about/,0.1954288109995246
+https://icerm.brown.edu/about/nsf/,0.1954288109995246
+https://icerm.brown.edu/about/people/,0.1954288109995246
+https://icerm.brown.edu/about/boards/,0.1954288109995246
+https://icerm.brown.edu/about/postdocs/,0.1954288109995246
+https://icerm.brown.edu/about/diversity/,0.1954288109995246
+https://icerm.brown.edu/about/jobs/,0.1954288109995246
+https://icerm.brown.edu/news/,0.1954288109995246
+https://icerm.brown.edu/support-icerm/,0.1954288109995246
+https://icerm.brown.edu/topical_workshops/tw-20-wiag/,0.04488322994637002
+https://icerm.brown.edu/summerug/2020/,0.04487807515151499
+https://icerm.brown.edu/topical_workshops/tw-20-glu/,0.03852615770090543
+https://icerm.brown.edu/tripods/tri-20-awds/,0.03852615770090543
+dominant eigenvector: [0.19542881 0.19542881 0.19542881 0.19542881 0.19542881 0.19542881
+ 0.19542881 0.19542881 0.19542881 0.19542881 0.19542881 0.19542881
+ 0.19542881 0.19542881 0.19542881 0.19542881 0.19542881 0.19542881
+ 0.19542881 0.19542881 0.19542881 0.19542881 0.19542881 0.19542881
+ 0.19542881 0.19542881 0.04487808 0.03852616 0.03852616 0.04488323]
+dominant eigenvalue: 1.000000117935842

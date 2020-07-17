@@ -1,0 +1,65 @@
+Link,Page Rank Score
+https://icerm.brown.edu/visit/providence/,0.6102408817997859
+https://icerm.brown.edu/news/,0.506996662335542
+https://icerm.brown.edu/visit/finance/,0.23690473297569592
+https://icerm.brown.edu/about/diversity/,0.05118724721988059
+https://icerm.brown.edu/news/article/2019-12-ramananAAS,0.0019693137652708466
+https://icerm.brown.edu/girlsgetmath/2020/,0.0010833444942504819
+https://icerm.brown.edu/girlsgetmath/2016/,0.0009715953144499937
+https://icerm.brown.edu/news/article/2019-12-pipher,0.0005071669516015296
+https://icerm.brown.edu/reuf/reuf2012,0.0004287513724482061
+https://icerm.brown.edu/news/article/2020-03-spring-newsletter,0.00029032325557957784
+https://icerm.brown.edu/reuf/reuf2017/,2.8801273864572568e-05
+https://icerm.brown.edu/reuf/reuf2015/,1.8925496734580825e-05
+https://icerm.brown.edu/mathbytes/,1.6159566258960497e-17
+https://icerm.brown.edu/support-icerm/,1.6157187452418164e-17
+https://icerm.brown.edu/about/,1.615663169386993e-17
+https://icerm.brown.edu/topical_workshops/tw-20-glu/,3.0406206794773245e-19
+https://icerm.brown.edu/about/boards/,6.084108024255889e-21
+https://icerm.brown.edu/live-stream/,6.0785255138014926e-21
+https://icerm.brown.edu/about/nsf/,5.4732487890603306e-21
+https://icerm.brown.edu/about/jobs/,3.115629815733538e-21
+https://icerm.brown.edu/about/people/,3.0704295102447546e-21
+https://icerm.brown.edu/about/postdocs/,3.03095274614276e-21
+https://icerm.brown.edu/video_archive/,-4.540139647815952e-22
+https://icerm.brown.edu/topical_workshops/tw-20-frrt,-7.62912718000513e-18
+https://icerm.brown.edu/topical_workshops/tw-20-srag/,-1.5377899712955237e-17
+https://icerm.brown.edu/tripods/tri-20-awds/,-1.5731956960765137e-17
+https://icerm.brown.edu/summerug/,-3.165355469523292e-17
+https://icerm.brown.edu/visit/technology/,-3.230629038676407e-17
+https://icerm.brown.edu/reuf/reuf2019/,-2.771278232614014e-07
+https://icerm.brown.edu/reuf/reuf2013,-4.2237903003833074e-05
+https://icerm.brown.edu/girlsgetmath/2018/,-0.0009757152803921475
+https://icerm.brown.edu/girlsgetmath/ http:/www.browndailyherald.com/2018/09/06/girlsgetmath-engages-local-high-school-students/,-0.0010738374321771819
+https://icerm.brown.edu/girlsgetmath/2014/,-0.0029250398953725274
+https://icerm.brown.edu/summerug/2020/,-0.003187558241760651
+https://icerm.brown.edu/girlsgetmath/donate/,-0.0033252061814055853
+https://icerm.brown.edu/girlsgetmath/2015/,-0.0036051658084617477
+https://icerm.brown.edu/girlsgetmath/2019/,-0.004902908084137903
+https://icerm.brown.edu/events/htw-20-mgge,-0.007586923931646116
+https://icerm.brown.edu/topical_workshops/tw-20-wiag/,-0.007803104232620725
+https://icerm.brown.edu/pds/,-0.010789322410271045
+https://icerm.brown.edu/reuf/,-0.014933766964711026
+https://icerm.brown.edu/girlsgetmath/,-0.01702470609376303
+https://icerm.brown.edu/girlsgetmath/2017/,-0.017166306468853886
+https://icerm.brown.edu/programs/,-0.04883377600447552
+https://icerm.brown.edu/proposals/,-0.09513029883089921
+https://icerm.brown.edu/visit/,-0.14144664969317247
+https://icerm.brown.edu/,-0.1640150269292584
+https://icerm.brown.edu/visit/travel/,-0.16958202145614015
+https://icerm.brown.edu/visit/facilities/,-0.1763431804849416
+https://icerm.brown.edu/collaborate/,-0.4387494176149419
+dominant eigenvector: [-1.64015027e-01 -4.88337760e-02 -9.51302988e-02 -3.16535547e-17
+ -4.38749418e-01 -1.70247061e-02 -1.49337670e-02 -1.41446650e-01
+ -1.76343180e-01 -1.69582021e-01  2.36904733e-01  6.10240882e-01
+ -1.07893224e-02 -3.23062904e-17 -4.54013965e-22  6.07852551e-21
+  1.61595663e-17  1.61566317e-17  5.47324879e-21  3.07042951e-21
+  6.08410802e-21  3.03095275e-21  5.11872472e-02  3.11562982e-21
+  5.06996662e-01  1.61571875e-17 -3.18755824e-03  3.04062068e-19
+ -1.57319570e-17 -7.80310423e-03 -7.62912718e-18  1.08334449e-03
+ -1.53778997e-17 -7.58692393e-03  2.90323256e-04  5.07166952e-04
+  1.96931377e-03 -2.77127823e-07  2.88012739e-05  1.89254967e-05
+ -4.22379030e-05  4.28751372e-04 -1.07383743e-03 -4.90290808e-03
+ -9.75715280e-04 -1.71663065e-02  9.71595314e-04 -3.60516581e-03
+ -2.92503990e-03 -3.32520618e-03]
+dominant eigenvalue: 0.9851234880846347

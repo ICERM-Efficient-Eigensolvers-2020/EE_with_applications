@@ -1,0 +1,61 @@
+Link,Page Rank Score
+https://icerm.brown.edu/programs/,0.5245157531573166
+https://icerm.brown.edu/news/,0.43609744601053557
+https://icerm.brown.edu/proposals/,0.1679834420609723
+https://icerm.brown.edu/news/article/2020-03-spring-newsletter,0.1118663016212654
+https://icerm.brown.edu/summerug/,0.047190768567417066
+https://icerm.brown.edu/about/diversity/,0.039654625789110186
+https://icerm.brown.edu/collaborate/,0.023918249807847382
+https://icerm.brown.edu/girlsgetmath/,0.022150550350102688
+https://icerm.brown.edu/news/article/2019-12-ramananAAS,0.014062044513733076
+https://icerm.brown.edu/visit/,0.012464127835295416
+https://icerm.brown.edu/reuf/,0.011079267708703688
+https://icerm.brown.edu/visit/facilities/,0.009398575317140237
+https://icerm.brown.edu/news/article/2019-12-pipher,0.009376113498973096
+https://icerm.brown.edu/visit/travel/,0.00754897452106891
+https://icerm.brown.edu/visit/finance/,0.0063096627042925285
+https://icerm.brown.edu/visit/providence/,0.00542073819316392
+https://icerm.brown.edu/pds/,0.004751766828677291
+https://icerm.brown.edu/visit/technology/,0.004229991972575836
+https://icerm.brown.edu/video_archive/,0.003811593534275998
+https://icerm.brown.edu/live-stream/,0.0034685904773433304
+https://icerm.brown.edu/mathbytes/,0.0031822720555791566
+https://icerm.brown.edu/about/,0.002939649820566817
+https://icerm.brown.edu/about/nsf/,0.0027314241858788922
+https://icerm.brown.edu/about/people/,0.0025507609921376307
+https://icerm.brown.edu/about/boards/,0.002392524911067737
+https://icerm.brown.edu/about/postdocs/,0.0022527822528305196
+https://icerm.brown.edu/about/jobs/,0.0011236161256065564
+https://icerm.brown.edu/support-icerm/,-0.011836181151831632
+https://icerm.brown.edu/,-0.012974971917870472
+https://icerm.brown.edu/girlsgetmath/2014/,-0.017589788581985195
+https://icerm.brown.edu/girlsgetmath/2015/,-0.02233803967393237
+https://icerm.brown.edu/events/htw-20-mgge,-0.025669150003653975
+https://icerm.brown.edu/topical_workshops/tw-20-srag/,-0.028549025597131683
+https://icerm.brown.edu/topical_workshops/tw-20-frrt,-0.029631025490015377
+https://icerm.brown.edu/girlsgetmath/2016/,-0.030656194624287567
+https://icerm.brown.edu/girlsgetmath/2017/,-0.049263621425134206
+https://icerm.brown.edu/girlsgetmath/2020/,-0.0596298519859592
+https://icerm.brown.edu/girlsgetmath/2018/,-0.0649510286925272
+https://icerm.brown.edu/girlsgetmath/2019/,-0.06511671758730038
+https://icerm.brown.edu/tripods/tri-20-awds/,-0.07675902042832129
+https://icerm.brown.edu/reuf/reuf2019/,-0.08565446314877946
+https://icerm.brown.edu/topical_workshops/tw-20-glu/,-0.09717979393054048
+https://icerm.brown.edu/reuf/reuf2017/,-0.10445365504005204
+https://icerm.brown.edu/girlsgetmath/donate/,-0.11178897448025231
+https://icerm.brown.edu/reuf/reuf2015/,-0.13392781306325038
+https://icerm.brown.edu/topical_workshops/tw-20-wiag/,-0.16549102707921431
+https://icerm.brown.edu/reuf/reuf2013,-0.18700996185117502
+https://icerm.brown.edu/girlsgetmath/ http:/www.browndailyherald.com/2018/09/06/girlsgetmath-engages-local-high-school-students/,-0.24384678552533284
+https://icerm.brown.edu/reuf/reuf2012,-0.3134168417608173
+https://icerm.brown.edu/summerug/2020/,-0.43046427215495997
+dominant eigenvector: [-0.01297497  0.52451575  0.16798344  0.04719077  0.02391825  0.02215055
+  0.01107927  0.01246413  0.00939858  0.00754897  0.00630966  0.00542074
+  0.00475177  0.00422999  0.00381159  0.00346859  0.00318227  0.00293965
+  0.00273142  0.00255076  0.00239252  0.00225278  0.03965463  0.00112362
+  0.43609745 -0.01183618 -0.43046427 -0.09717979 -0.07675902 -0.16549103
+ -0.02963103 -0.05962985 -0.02854903 -0.02566915  0.1118663   0.00937611
+  0.01406204 -0.08565446 -0.10445366 -0.13392781 -0.18700996 -0.31341684
+ -0.24384679 -0.06511672 -0.06495103 -0.04926362 -0.03065619 -0.02233804
+ -0.01758979 -0.11178897]
+dominant eigenvalue: 0.9453347837847478

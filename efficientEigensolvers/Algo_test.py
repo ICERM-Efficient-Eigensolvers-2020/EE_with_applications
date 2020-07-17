@@ -36,7 +36,7 @@ def correctness_test(url, max_urls, func_list):
     val_list = w.tolist()
     idx = val_list.index(max(val_list))
     eigenvec_np = v[:,idx]
-
+    eigenvec_np = eigenvec_np/LA.norm(eigenvec_np)
     page_rank_dict = {}
     for i, page in enumerate(internal_url_dict):
         page_rank_dict[page] = eigenvec_np[i]
