@@ -29,7 +29,7 @@ def Stochastic_matrix_test():
     M = pru.stochastic_transition_matrix_from_G(diG, False, 0.15)
     #print(M)
 
-def web_scrawler_application(url, max_urls,  func_list, weight=0.15):
+def web_scrawler_application(url, max_urls,  func_list, recal, weight=0.15):
     url_w = url.replace('.', '_')
     url_w = url_w.replace('/', '')
     url_w = re.sub('https:', '', url_w)
@@ -42,19 +42,24 @@ def web_scrawler_application(url, max_urls,  func_list, weight=0.15):
     logf = open(result_folder_path + "/error.log", "w")
     f1 = open(result_folder_path + "/page_rank_algorithms_comparison.txt", "w")
 
+    raw_adjacency_matrix_file = result_folder_path + "/raw_adjacency_matrix.npy"
     stochastic_matrix_file = result_folder_path + "/prepared_matrix.npy"
     internal_url_dict_file = result_folder_path + "/internal_url_dict.txt"
-    if not os.path.exists(stochastic_matrix_file) or not os.path.exists(internal_url_dict_file):
+    recalculate = recal
+    if not os.path.exists(stochastic_matrix_file) or not os.path.exists(internal_url_dict_file)  or recalculate:
         A, diG, internal_url_dict = web_scraper.scraper(url, max_urls)
-        plt.spy(A, markersize=10)
+        plt.spy(A)
         plt.savefig(result_folder_path+f'/{max_urls}_adhMatrix')
-
+        np.save(raw_adjacency_matrix_file , A)
         M = pru.stochastic_transition_matrix_from_G(diG, False, weight)
         np.save(stochastic_matrix_file, M)
         f_d = open(internal_url_dict_file, "w")
         f_d.write(str(internal_url_dict))
         f_d.close()
     else:
+        A = np.load(raw_adjacency_matrix_file)
+        plt.spy(A)
+        plt.savefig(result_folder_path + f'/{max_urls}_adhMatrix')
         M = np.load(stochastic_matrix_file)
         f2 = open(internal_url_dict_file, "r")
         contents = f2.read()
@@ -101,24 +106,30 @@ def web_scrawler_application(url, max_urls,  func_list, weight=0.15):
 if __name__ == '__main__':
 
     print("###ICERM domain test###")
-
+    #another good attemp: https://mathworld.wolfram.com/
+    filename = sys.argv[-1]
+    file1 = open(filename, 'r')
+    lines = file1.readlines()
+    url = lines[0].strip()
+    max_urls = int(lines[1].strip())
+    recal = int(lines[2].strip())
+    """
     import argparse
 
     parser = argparse.ArgumentParser(description="Link Extractor Tool with Python")
-    parser.add_argument("url", help="The URL to extract links from.")
+    parser.add_argument("-u", "--url", help="The URL to extract links from.")
     parser.add_argument("-m", "--max-urls", help="Number of max URLs to crawl, default is 30.", default=30, type=int)
-    parser.add_argument("func", help="The eigensolver to be tested.")
 
     args = parser.parse_args()
     url = args.url
     max_urls = args.max_urls
-    func = args.func
-    """
-    #comment this out and change your func if you don't want to use shell
+    
+    #comment bove out if you don't want to use shell
     url = "https://icerm.brown.edu/"
     max_urls = 30
     """
-    func_list = [PowerMethod, qr_Algorithm_HH, qr_Algorithm_GS, shiftedQR_Algorithm, InverseMethod, InverseShift]
 
-    web_scrawler_application(url, max_urls, func_list)
+    func_list = [PowerMethod, qr_Algorithm_HH, qr_Algorithm_GS, shiftedQR_Algorithm, InverseMethod, InverseShift]
+    print(max_urls)
+    web_scrawler_application(url, max_urls, func_list, recal)
     Stochastic_matrix_test()

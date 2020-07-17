@@ -1,0 +1,61 @@
+Link,Page Rank Score
+https://icerm.brown.edu/,0.19366813480329048
+https://icerm.brown.edu/programs/,0.19366813480329048
+https://icerm.brown.edu/proposals/,0.19366813480329048
+https://icerm.brown.edu/summerug/,0.19366813480329048
+https://icerm.brown.edu/collaborate/,0.19366813480329048
+https://icerm.brown.edu/girlsgetmath/,0.19366813480329048
+https://icerm.brown.edu/reuf/,0.19366813480329048
+https://icerm.brown.edu/visit/,0.19366813480329048
+https://icerm.brown.edu/visit/facilities/,0.19366813480329048
+https://icerm.brown.edu/visit/travel/,0.19366813480329048
+https://icerm.brown.edu/visit/finance/,0.19366813480329048
+https://icerm.brown.edu/visit/providence/,0.19366813480329048
+https://icerm.brown.edu/pds/,0.19366813480329048
+https://icerm.brown.edu/visit/technology/,0.19366813480329048
+https://icerm.brown.edu/video_archive/,0.19366813480329048
+https://icerm.brown.edu/live-stream/,0.19366813480329048
+https://icerm.brown.edu/mathbytes/,0.19366813480329048
+https://icerm.brown.edu/about/,0.19366813480329048
+https://icerm.brown.edu/about/nsf/,0.19366813480329048
+https://icerm.brown.edu/about/people/,0.19366813480329048
+https://icerm.brown.edu/about/boards/,0.19366813480329048
+https://icerm.brown.edu/about/postdocs/,0.19366813480329048
+https://icerm.brown.edu/about/diversity/,0.19366813480329048
+https://icerm.brown.edu/about/jobs/,0.19366813480329048
+https://icerm.brown.edu/news/,0.19366813480329048
+https://icerm.brown.edu/support-icerm/,0.19366813480329048
+https://icerm.brown.edu/girlsgetmath/2020/,0.04620396852524784
+https://icerm.brown.edu/topical_workshops/tw-20-wiag/,0.0398620764050195
+https://icerm.brown.edu/summerug/2020/,0.039217063141500634
+https://icerm.brown.edu/tripods/tri-20-awds/,0.033798328247555395
+https://icerm.brown.edu/topical_workshops/tw-20-srag/,0.033798328247555395
+https://icerm.brown.edu/topical_workshops/tw-20-glu/,0.033666645163907605
+https://icerm.brown.edu/news/article/2019-12-pipher,0.03358802494756139
+https://icerm.brown.edu/news/article/2019-12-ramananAAS,0.03358802494756139
+https://icerm.brown.edu/news/article/2020-03-spring-newsletter,0.03341837408415953
+https://icerm.brown.edu/events/htw-20-mgge,0.032921428319331744
+https://icerm.brown.edu/topical_workshops/tw-20-frrt,0.03288327294337668
+https://icerm.brown.edu/news/documents/Special_Call_Proposals.pdf,0.0325310339224708
+https://icerm.brown.edu/visit/travel,0.028365624067353084
+https://icerm.brown.edu/pds/pds-grant-proposals.pdf,0.02835948202662807
+https://icerm.brown.edu/pds/pds-ethics-1.pdf,0.028359482026628063
+https://icerm.brown.edu/pds/pds-ethics-II.pdf,0.028359482026628063
+https://icerm.brown.edu/pds/pds-job-applications.pdf,0.028359482026628063
+https://icerm.brown.edu/pds/pds-hiring.pdf,0.028359482026628063
+https://icerm.brown.edu/pds/pds-papers-journals.pdf,0.028359482026628063
+"https://icerm.brown.edu/materials/Abstracts/tw-20-glu/Inclusivity_in_mathematics_and_computer_discoveries_about_loops_on_surfaces_]_Moira_Chas,_Stony_Brook_University.pdf",0.027937283231316043
+"https://icerm.brown.edu/materials/Abstracts/tw-20-glu/Mathematics_through_3D_printing,_a_GMU_capstone_course_]_Evelyn_Sander,_George_Mason_University.pdf",0.027937283231316043
+"https://icerm.brown.edu/materials/Slides/tw-20-glu/Mathematics_through_3D_printing,_a_GMU_capstone_course_]_Evelyn_Sander,_George_Mason_University.pdf",0.027937283231316043
+"https://icerm.brown.edu/materials/Abstracts/tw-20-glu/Supervising_undergraduate_research_in_mathematical_visualization_]_David_Dumas,_University_of_Illinois_at_Chicago.pdf",0.027937283231316043
+"https://icerm.brown.edu/materials/Abstracts/tw-20-glu/The_spheres_of_Sol_]_Richard_Schwartz,_Brown_University.pdf",0.027937283231316043
+dominant eigenvector: [0.19366813 0.19366813 0.19366813 0.19366813 0.19366813 0.19366813
+ 0.19366813 0.19366813 0.19366813 0.19366813 0.19366813 0.19366813
+ 0.19366813 0.19366813 0.19366813 0.19366813 0.19366813 0.19366813
+ 0.19366813 0.19366813 0.19366813 0.19366813 0.19366813 0.19366813
+ 0.19366813 0.19366813 0.03253103 0.03921706 0.03366665 0.02793728
+ 0.02793728 0.02793728 0.02793728 0.02793728 0.03379833 0.03986208
+ 0.03288327 0.04620397 0.03379833 0.03292143 0.03341837 0.03358802
+ 0.03358802 0.02835948 0.02835948 0.02835948 0.02835948 0.02835948
+ 0.02835948 0.02836562]
+dominant eigenvalue: 0.9999896929427105
