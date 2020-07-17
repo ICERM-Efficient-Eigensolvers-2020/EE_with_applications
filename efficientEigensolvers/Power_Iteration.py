@@ -56,7 +56,7 @@ def PowerMethod(A,norm_indicator=True, converge_range=0.0001, file_path=""):
     plt.xlabel('iterations')
     plt.ylabel('lambda difference')
     plt.savefig( file_path + "/Power_iteration_lambda_diff")
-
+    plt.close()
     return v_list[-1], lambda_list[-1]
 
 def print_log(idx, v_list, lambda_list, diff_list, file_path):

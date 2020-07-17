@@ -1,0 +1,119 @@
+Link,Page Rank Score
+https://google.com/advanced_search,0.6828763881120788
+https://google.com/services/,0.07784330270482383
+https://google.com/intl/en/policies/privacy/,0.06895371155907343
+https://google.com/intl/en/ads/,0.016022336716029383
+https://google.com/,0.004607446238249523
+https://google.com/preferences,0.003099992425631323
+https://google.com/intl/en/policies/terms/,0.0
+https://google.com/intl/en/about.html,-0.016551326580720675
+https://google.com/intl/en/home/,nan
+https://google.com/intl/en/home/how-it-works/,nan
+https://google.com/intl/en/home/pricing/,nan
+https://google.com/intl/en/home/faq/,nan
+https://google.com/intl/en/home/resources/advanced/,nan
+https://google.com/intl/en/home/contact-us/,nan
+https://google.com/intl/en/ads/tel:18442452553,nan
+https://google.com/intl/en/home/tools/api/,nan
+https://google.com/url,nan
+https://google.com/webhp,nan
+https://google.com/support/websearch,nan
+https://google.com/history/optout,nan
+https://google.com/websearch,nan
+https://google.com/websearch/,nan
+https://google.com/websearch/community,nan
+https://google.com/websearch/announcements/9587893,nan
+https://google.com/websearch/answer/179386,nan
+https://google.com/websearch/answer/54068,nan
+https://google.com/websearch/answer/465,nan
+https://google.com/websearch/answer/2819496,nan
+https://google.com/websearch/answer/7539151,nan
+https://google.com/websearch/answer/106230,nan
+https://google.com/websearch/answer/2940021,nan
+https://google.com/websearch/troubleshooter/3111061,nan
+https://google.com/websearch/topic/3425345,nan
+https://google.com/websearch/answer/6223687,nan
+https://google.com/websearch/answer/134479,nan
+https://google.com/websearch/topic/9255577,nan
+https://google.com/websearch/answer/142143,nan
+https://google.com/websearch/answer/181196,nan
+https://google.com/websearch/answer/1710607,nan
+https://google.com/websearch/answer/1687222,nan
+https://google.com/websearch/answer/7315336,nan
+https://google.com/websearch/answer/7568277,nan
+https://google.com/websearch/topic/9255578,nan
+https://google.com/websearch/answer/4540094,nan
+https://google.com/websearch/answer/9836344,nan
+https://google.com/websearch/answer/2390267,nan
+https://google.com/websearch/topic/4409793,nan
+https://google.com/websearch/topic/6011752,nan
+https://google.com/websearch/topic/9749819,nan
+https://google.com/websearch/answer/6380730,nan
+https://google.com/websearch/answer/9043722,nan
+https://google.com/websearch/answer/6350733,nan
+https://google.com/websearch/answer/2649515,nan
+https://google.com/websearch/answer/7674111,nan
+https://google.com/websearch/answer/9049144,nan
+https://google.com/websearch/topic/2365089,nan
+https://google.com/websearch/answer/9723144,nan
+https://google.com/websearch/answer/9817187,nan
+https://google.com/websearch/answer/112511,nan
+https://google.com/websearch/answer/1325808,nan
+https://google.com/websearch/answer/29508,nan
+https://google.com/websearch/answer/112568,nan
+https://google.com/websearch/answer/175288,nan
+https://google.com/websearch/answer/185515,nan
+https://google.com/websearch/answer/9847330,nan
+https://google.com/websearch/answer/9910360,nan
+https://google.com/websearch/answer/510,nan
+https://google.com/websearch/answer/186669,nan
+https://google.com/websearch/answer/6096136,nan
+https://google.com/websearch/answer/6139018,nan
+https://google.com/websearch/answer/9153225,nan
+https://google.com/websearch/topic/9153329,nan
+https://google.com/websearch/answer/3284611,nan
+https://google.com/websearch/answer/7579076,nan
+https://google.com/websearch/answer/2466433,nan
+https://google.com/websearch/answer/9217379,nan
+https://google.com/websearch/answer/4815696,nan
+https://google.com/websearch/answer/35890,nan
+https://google.com/websearch/answer/9595947,nan
+https://google.com/websearch/answer/9250033,nan
+https://google.com/websearch/answer/9879130,nan
+https://google.com/websearch/answer/463,nan
+https://google.com/websearch/answer/464,nan
+https://google.com/websearch/answer/9208897,nan
+https://google.com/websearch/answer/2539428,nan
+https://google.com/websearch/answer/3333234,nan
+https://google.com/websearch/answer/6135999,nan
+https://google.com/websearch/answer/9504726,nan
+https://google.com/websearch/answer/9507369,nan
+https://google.com/websearch/answer/9503395,nan
+https://google.com/intl/en/,nan
+https://google.com/intl/en/products/,nan
+https://google.com/intl/en/commitments/,nan
+https://google.com/intl/en/stories/,nan
+https://google.com/commitments/racialequity/,nan
+https://google.com/intl/en/products,nan
+https://google.com/intl/en/commitments,nan
+https://google.com/intl/en/stories,nan
+https://google.com/intl/en/locations/,nan
+https://google.com/intl/en/our-story,nan
+dominant eigenvector: [ 0.00460745  0.00309999  0.68287639  0.01602234  0.0778433  -0.01655133
+  0.06895371  0.                 nan         nan         nan         nan
+         nan         nan         nan         nan         nan         nan
+         nan         nan         nan         nan         nan         nan
+         nan         nan         nan         nan         nan         nan
+         nan         nan         nan         nan         nan         nan
+         nan         nan         nan         nan         nan         nan
+         nan         nan         nan         nan         nan         nan
+         nan         nan         nan         nan         nan         nan
+         nan         nan         nan         nan         nan         nan
+         nan         nan         nan         nan         nan         nan
+         nan         nan         nan         nan         nan         nan
+         nan         nan         nan         nan         nan         nan
+         nan         nan         nan         nan         nan         nan
+         nan         nan         nan         nan         nan         nan
+         nan         nan         nan         nan         nan         nan
+         nan         nan         nan         nan]
+dominant eigenvalue: 0.7677220558227865

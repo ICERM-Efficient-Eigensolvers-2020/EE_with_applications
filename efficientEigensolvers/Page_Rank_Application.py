@@ -50,6 +50,7 @@ def web_scrawler_application(url, max_urls,  func_list, recal, weight=0.15):
         A, diG, internal_url_dict = web_scraper.scraper(url, max_urls)
         plt.spy(A)
         plt.savefig(result_folder_path+f'/{max_urls}_adhMatrix')
+        plt.close()
         np.save(raw_adjacency_matrix_file , A)
         M = pru.stochastic_transition_matrix_from_G(diG, False, weight)
         np.save(stochastic_matrix_file, M)
@@ -106,8 +107,7 @@ def web_scrawler_application(url, max_urls,  func_list, recal, weight=0.15):
     f1.close()
 
 if __name__ == '__main__':
-
-    print("###ICERM domain test###")
+    print("###Page Ranking###")
     #another good attemp: https://mathworld.wolfram.com/
     filename = sys.argv[-1]
     file1 = open(filename, 'r')
@@ -115,6 +115,7 @@ if __name__ == '__main__':
     url = lines[0].strip()
     max_urls = int(lines[1].strip())
     recal = int(lines[2].strip())
+    print(url)
     """
     import argparse
 
