@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 algo: PowerMethod   time:0.1385350227355957
 algo: qr_Algorithm_HH   time:0.025902509689331055
 algo: qr_Algorithm_GS   time:0.05878639221191406
 algo: shiftedQR_Algorithm   time:0.034470558166503906
+=======
+algo: PowerMethod   time:0.15394210815429688
+algo: qr_Algorithm_HH   time:0.0035560131072998047
+algo: qr_Algorithm_GS   time:0.04487895965576172
+algo: shiftedQR_Algorithm   time:0.04335308074951172
+>>>>>>> d88d82898d12c2ac3a7b51828b433adabdc04a27

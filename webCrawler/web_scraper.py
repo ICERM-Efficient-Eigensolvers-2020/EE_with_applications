@@ -64,9 +64,10 @@ def get_all_website_links(url, max_urls):
         #found out the internal link
 
         #new child
-        if not href.startswith(root):
-            continue
+        #add some filters to make this rank more meaningful
 
+        if href.endswith('.pdf') or not href.startswith(root):
+            continue
         if href not in url_dict.keys():
             idx = idx + 1
             if idx >= max_urls:

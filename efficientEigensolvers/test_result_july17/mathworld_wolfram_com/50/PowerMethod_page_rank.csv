@@ -1,0 +1,61 @@
+Link,Page Rank Score
+https://mathworld.wolfram.com/topics/Algebra.html,0.21847697775048397
+https://mathworld.wolfram.com/topics/AppliedMathematics.html,0.21847697775048397
+https://mathworld.wolfram.com/topics/CalculusandAnalysis.html,0.21847697775048397
+https://mathworld.wolfram.com/topics/DiscreteMathematics.html,0.21847697775048397
+https://mathworld.wolfram.com/topics/FoundationsofMathematics.html,0.21847697775048397
+https://mathworld.wolfram.com/topics/Geometry.html,0.21847697775048397
+https://mathworld.wolfram.com/topics/HistoryandTerminology.html,0.21847697775048397
+https://mathworld.wolfram.com/topics/NumberTheory.html,0.21847697775048397
+https://mathworld.wolfram.com/topics/ProbabilityandStatistics.html,0.21847697775048397
+https://mathworld.wolfram.com/topics/RecreationalMathematics.html,0.21847697775048397
+https://mathworld.wolfram.com/topics/Topology.html,0.21847697775048397
+https://mathworld.wolfram.com/letters/,0.21847697775048397
+https://mathworld.wolfram.com/topics/InteractiveEntries.html,0.21847697775048397
+https://mathworld.wolfram.com/cgi-bin/random.cgi,0.21847697775048397
+https://mathworld.wolfram.com/whatsnew/,0.21847697775048397
+https://mathworld.wolfram.com/classroom/,0.21847697775048397
+https://mathworld.wolfram.com/about/,0.21847697775048397
+https://mathworld.wolfram.com/contact/contribute.html,0.21847697775048397
+https://mathworld.wolfram.com/contact/,0.21847697775048397
+https://mathworld.wolfram.com/about/author.html,0.21847697775048397
+https://mathworld.wolfram.com/about/terms.html,0.18094354075169147
+https://mathworld.wolfram.com/topics/Point-SetTopology.html,0.04124202737794217
+https://mathworld.wolfram.com/,0.03460389613852383
+https://mathworld.wolfram.com/topics/MathematicalProblems.html,0.0310801707431788
+https://mathworld.wolfram.com/topics/Axioms.html,0.022026830226088034
+https://mathworld.wolfram.com/topics/CategoryTheory.html,0.022026830226088034
+https://mathworld.wolfram.com/topics/Logic.html,0.022026830226088034
+https://mathworld.wolfram.com/topics/SetTheory.html,0.022026830226088034
+https://mathworld.wolfram.com/topics/TheoremProving.html,0.022026830226088034
+https://mathworld.wolfram.com/OpenSet.html,0.01989073861340974
+https://mathworld.wolfram.com/OpenDisk.html,0.01810748645929196
+https://mathworld.wolfram.com/OpenInterval.html,0.01810748645929196
+https://mathworld.wolfram.com/OpenNeighborhood.html,0.018086097990328422
+https://mathworld.wolfram.com/Dense.html,0.01748445708228891
+https://mathworld.wolfram.com/DerivedSet.html,0.01748445708228891
+https://mathworld.wolfram.com/Arcwise-Connected.html,0.017462119375851463
+https://mathworld.wolfram.com/OpenMap.html,0.017458333750398063
+https://mathworld.wolfram.com/CoveringMap.html,0.017412903517903342
+https://mathworld.wolfram.com/CoveringSpace.html,0.017412903517903342
+https://mathworld.wolfram.com/NordstrandsWeirdSurface.html,0.017316265948149643
+https://mathworld.wolfram.com/MersennePrime.html,0.01728859256945648
+https://mathworld.wolfram.com/ConvexSet.html,0.016893402795117606
+https://mathworld.wolfram.com/ConvexityCoefficient.html,0.016893402795117606
+https://mathworld.wolfram.com/AffineHull.html,0.016893402795117606
+https://mathworld.wolfram.com/AlmostEverywhereConvergence.html,0.016893402795117606
+https://mathworld.wolfram.com/ArcComponent.html,0.016893402795117606
+https://mathworld.wolfram.com/OrderTopology.html,0.016868622313689255
+https://mathworld.wolfram.com/search/help.html,0.01667580276279601
+https://mathworld.wolfram.com/0-Connected.html,0.01629484764946935
+https://mathworld.wolfram.com/1-Connected.html,0.01629484764946935
+dominant eigenvector: [0.0346039  0.21847698 0.21847698 0.21847698 0.21847698 0.21847698
+ 0.21847698 0.21847698 0.21847698 0.21847698 0.21847698 0.21847698
+ 0.21847698 0.21847698 0.21847698 0.21847698 0.21847698 0.21847698
+ 0.21847698 0.21847698 0.01731627 0.21847698 0.01728859 0.0166758
+ 0.02202683 0.02202683 0.02202683 0.03108017 0.04124203 0.02202683
+ 0.02202683 0.18094354 0.01629485 0.0168934  0.01810749 0.01629485
+ 0.0168934  0.01810749 0.0168934  0.0174129  0.01745833 0.0168934
+ 0.0174129  0.0180861  0.0168934  0.01748446 0.01989074 0.01746212
+ 0.01748446 0.01686862]
+dominant eigenvalue: 1.0000099137725909
