@@ -1,0 +1,4 @@
+algo: PowerMethod   time:0.12426400184631348
+algo: qr_Algorithm_HH   time:0.0014841556549072266
+algo: qr_Algorithm_GS   time:0.010011911392211914
+algo: shiftedQR_Algorithm   time:0.008532285690307617

@@ -49,6 +49,7 @@ def web_scrawler_application(url, max_urls,  func_list, recal, weight=0.15):
     if not os.path.exists(stochastic_matrix_file) or not os.path.exists(internal_url_dict_file)  or recalculate:
         A, diG, internal_url_dict = web_scraper.scraper(url, max_urls)
         plt.spy(A)
+        plt.title(f'Adjacency Matrix for {url} with {max_urls} urls')
         plt.savefig(result_folder_path+f'/{max_urls}_adhMatrix')
         plt.close()
         np.save(raw_adjacency_matrix_file , A)
