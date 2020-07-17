@@ -1,0 +1,2 @@
+
+SFTP: SFTP was designed by the Internet Engineering Task Force as an extended version of SSH 2.0, allowing file transfer over SSH and use with Transport Layer Security(TLS) and VPN applications.
