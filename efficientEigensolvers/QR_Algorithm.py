@@ -2,8 +2,6 @@
 author: "Kelly Rivera"
 title: "QR Algorithm"
 """
-# This code is an implementation of a PageRank Algorithm variant using QR Decomposition
-# Implementing Householder and Gram-Schmidt Process
 
 ##Import Python Libraries
 import numpy as npy
@@ -33,7 +31,9 @@ def qr_Algorithm_HH(x, converge_range):
         eigenvectors = npy.dot(Q_last, Q)
         Q_last = eigenvectors
         
-    eigenvalues = npy.diag(x)  #outputs only the values on the main diaginal  
+        
+    eigenvalues = npy.diag(x)  #outputs only the values on the main diaginal
+    
     return eigenvectors, eigenvalues
 
 
@@ -65,7 +65,7 @@ def qr_Algorithm_GS(x, converge_range):
     
     lamb, u = spl.eig(x)
     lamb = min(npy.abs(lamb))
-        
+
     while diff > converge_range:
         Q, R = qr_GS(x)
         # This update matrix A, by dot product of reverse QR 
@@ -79,8 +79,8 @@ def qr_Algorithm_GS(x, converge_range):
         eigenvectors = npy.dot(Q_last, Q)
         Q_last = eigenvectors
         
-    eigenvalues = npy.diag(x)  #outputs only the values on the main diaginal    
-    
+    eigenvalues = npy.diag(x)  #outputs only the values on the main diaginal   
+
     return eigenvectors, eigenvalues
 
 
@@ -90,7 +90,7 @@ def shiftedQR_Algorithm(x, converge_range):
     I = npy.identity(n)
     Q_last = npy.identity(n)
     diff = 1
-    
+   
     lamb, u = spl.eig(x)
     lamb = min(npy.abs(lamb))
     
