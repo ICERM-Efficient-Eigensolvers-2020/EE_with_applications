@@ -2,6 +2,7 @@
 author: "Kelly Rivera"
 title: "QR Algorithm"
 """
+
 ##Import Python Libraries
 import numpy as npy
 import scipy.linalg as spl  # SciPy Linear Algebra Library
@@ -32,11 +33,7 @@ def qr_Algorithm_HH(x, converge_range):
         
         
     eigenvalues = npy.diag(x)  #outputs only the values on the main diaginal
-    eigenvalues = max(npy.abs(eigenvalues))
-    eigenvectors = eigenvectors[[0][0]]
-    eigenvectors = eigenvectors[0]
-
-
+    
     return eigenvectors, eigenvalues
 
 
@@ -82,10 +79,7 @@ def qr_Algorithm_GS(x, converge_range):
         eigenvectors = npy.dot(Q_last, Q)
         Q_last = eigenvectors
         
-    eigenvalues = npy.diag(x)  #outputs only the values on the main diaginal    
-    eigenvalues = max(npy.abs(eigenvalues))
-    eigenvectors = eigenvectors[[0][0]]
-    eigenvectors = eigenvectors[0]
+    eigenvalues = npy.diag(x)  #outputs only the values on the main diaginal   
 
     return eigenvectors, eigenvalues
 
@@ -115,8 +109,5 @@ def shiftedQR_Algorithm(x, converge_range):
         Q_last = eigenvectors
         
     eigenvalues = npy.diag(x)  #outputs only the values on the main diaginal    
-    eigenvalues = max(npy.abs(eigenvalues))
-    eigenvectors = eigenvectors[[0][0]]
-    eigenvectors = eigenvectors[0]
-
-    return eigenvectors, eigenvalues    
+    
+    return eigenvectors, eigenvalues     
