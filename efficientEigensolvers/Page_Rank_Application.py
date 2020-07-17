@@ -63,36 +63,38 @@ def web_scrawler_application(url, max_urls,  func_list, weight=0.15):
 
     converge_range = 0.0001
     for func in func_list:
-        t_start= time.time()
+
         try:
+            t_start = time.time()
             if func in [qr_Algorithm_GS, qr_Algorithm_HH, shiftedQR_Algorithm]:
                 eigenvec, eigenval = func(M, converge_range=converge_range)
             else:
                 eigenvec, eigenval = func(M, converge_range=converge_range, file_path=result_folder_path)
+            t_end = time.time()
+            time_length = t_end - t_start
+
+            f1.write(f"algo: {func.__name__}   time:{time_length}\n")
+
+            page_rank_dict = {}
+            for i, page in enumerate(internal_url_dict):
+                page_rank_dict[page] = eigenvec[i]
+
+            try:
+                page_rank_dict = sorted(page_rank_dict.items(), key=lambda x: x[1], reverse=True)
+                fields = ['Link', 'Page Rank Score']
+                with open(result_folder_path + f"/{func.__name__}_page_rank.csv", "w", newline='') as f:
+                    writer = csv.writer(f)
+                    writer.writerow(fields)
+                    for item in page_rank_dict:
+                        writer.writerow(item)
+                    print(f"dominant eigenvector: {eigenvec}", file=f)
+                    print(f"dominant eigenvalue: {eigenval}", file=f)
+            except:
+                logf.write(f'\nalgorithm {func.__name__} cannot give out right eigenvector format')
         except:
-            logf.write(f'algorithm {func.__name__} doesnt work')
+            logf.write(f'\nalgorithm {func.__name__} doesnt work when solving the eigenvector')
             pass
-        t_end = time.time()
-        time_length = t_end - t_start
 
-        f1.write(f"algo: {func.__name__}   time:{time_length}\n")
-
-        page_rank_dict = {}
-        for i, page in enumerate(internal_url_dict):
-            page_rank_dict[page] = eigenvec[i]
-
-
-        page_rank_dict = sorted(page_rank_dict.items(), reverse=True)
-
-
-        fields = ['Link', 'Page Rank Score']
-        with open(result_folder_path+f"/{func.__name__}_page_rank.csv", "w", newline='') as f:
-            writer = csv.writer(f)
-            writer.writerow(fields)
-            for item in page_rank_dict:
-                writer.writerow(item)
-            print(f"dominant eigenvector: {eigenvec}", file=f)
-            print(f"dominant eigenvalue: {eigenval}", file=f)
 
     f1.close()
 

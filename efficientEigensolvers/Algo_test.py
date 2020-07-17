@@ -8,7 +8,7 @@ import os
 from numpy import linalg as LA
 import operator
 import ast
-
+import csv
 THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
 
 
@@ -26,14 +26,32 @@ def correctness_test(url, max_urls, func_list):
     f2 = open(internal_url_dict_file, "r")
     contents = f2.read()
     internal_url_dict = ast.literal_eval(contents)
+
+
+
     ###########################################
     # correctness test
-    f = open(result_folder_path + "/Linalg_page_rank.txt", "w", newline='')
+    f = open(result_folder_path + "/Linalg_page_rank.csv", "w", newline='')
     w, v = LA.eigh(M)
     val_list = w.tolist()
     idx = val_list.index(max(val_list))
     eigenvec_np = v[:,idx]
-    f.write(f"dominant eigenvector: {eigenvec_np}")
+
+    page_rank_dict = {}
+    for i, page in enumerate(internal_url_dict):
+        page_rank_dict[page] = eigenvec_np[i]
+
+    page_rank_dict = sorted(page_rank_dict.items(), key=lambda x: x[1], reverse=True)
+
+    fields = ['Link', 'Page Rank Score']
+    writer = csv.writer(f)
+    writer.writerow(fields)
+    for item in page_rank_dict:
+        writer.writerow(item)
+
+    print(f"dominant eigenvector: {eigenvec_np}", file=f)
+    print(f"dominant eigenvalue: {max(val_list)}", file=f)
+
     # for new funcs
 
     converge_range = 0.0001
