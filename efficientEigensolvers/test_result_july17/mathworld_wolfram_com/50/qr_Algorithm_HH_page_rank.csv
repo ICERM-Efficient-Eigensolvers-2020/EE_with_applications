@@ -1,0 +1,65 @@
+Link,Page Rank Score
+https://mathworld.wolfram.com/topics/FoundationsofMathematics.html,0.7405655959426538
+https://mathworld.wolfram.com/topics/DiscreteMathematics.html,0.5046824891594146
+https://mathworld.wolfram.com/cgi-bin/random.cgi,0.23829349011282092
+https://mathworld.wolfram.com/topics/HistoryandTerminology.html,0.0013374643847549853
+https://mathworld.wolfram.com/contact/,2.844582786314329e-17
+https://mathworld.wolfram.com/whatsnew/2020/,2.532576275375559e-17
+https://mathworld.wolfram.com/about/author.html,2.4913360478805003e-17
+https://mathworld.wolfram.com/whatsnew/2002/,7.047168766262425e-18
+https://mathworld.wolfram.com/whatsnew/2015/,3.9640324310226135e-18
+https://mathworld.wolfram.com/whatsnew/2000/,1.761792191565606e-18
+https://mathworld.wolfram.com/whatsnew/2018/,1.431456155647055e-18
+https://mathworld.wolfram.com/whatsnew/2017/,1.3213441436742045e-18
+https://mathworld.wolfram.com/whatsnew/2011/,1.3213441436742045e-18
+https://mathworld.wolfram.com/whatsnew/2010/,6.606720718371023e-19
+https://mathworld.wolfram.com/whatsnew/2019/,4.679760508846141e-19
+https://mathworld.wolfram.com/classroom/,2.6053638754219163e-19
+https://mathworld.wolfram.com/about/,2.571527980935917e-19
+https://mathworld.wolfram.com/contact/contribute.html,2.571527980935917e-19
+https://mathworld.wolfram.com/SaalschuetzsTheorem.html,2.2022402394570077e-19
+https://mathworld.wolfram.com/NordstrandsWeirdSurface.html,1.129189417807298e-19
+https://mathworld.wolfram.com/whatsnew/2012/,-2.2022402394570077e-19
+https://mathworld.wolfram.com/whatsnew/2016/,-3.3033603591855113e-19
+https://mathworld.wolfram.com/whatsnew/2014/,-4.404480478914015e-19
+https://mathworld.wolfram.com/whatsnew/2013/,-4.404480478914015e-19
+https://mathworld.wolfram.com/Plumbing.html,-8.80896095782803e-19
+https://mathworld.wolfram.com/whatsnew/2009/,-8.80896095782803e-19
+https://mathworld.wolfram.com/whatsnew/2006/,-8.80896095782803e-19
+https://mathworld.wolfram.com/whatsnew/2003/,-1.3213441436742045e-18
+https://mathworld.wolfram.com/whatsnew/2005/,-1.431456155647055e-18
+https://mathworld.wolfram.com/MongolianTentGraph.html,-1.5415681676199053e-18
+https://mathworld.wolfram.com/whatsnew/2004/,-1.761792191565606e-18
+https://mathworld.wolfram.com/whatsnew/2001/,-1.761792191565606e-18
+https://mathworld.wolfram.com/Lemniscate.html,-3.743808407076913e-18
+https://mathworld.wolfram.com/whatsnew/2008/,-4.624704502859716e-18
+https://mathworld.wolfram.com/whatsnew/2007/,-4.624704502859716e-18
+https://mathworld.wolfram.com/ToricSection.html,-1.48651216163348e-17
+https://mathworld.wolfram.com/MersennePrime.html,-5.626307011890586e-17
+https://mathworld.wolfram.com/search/help.html,-1.3397657328181732e-16
+https://mathworld.wolfram.com/topics/Algebra.html,-7.334970564879762e-16
+https://mathworld.wolfram.com/letters/,-0.0022697256671407725
+https://mathworld.wolfram.com/topics/InteractiveEntries.html,-0.0022697256671407725
+https://mathworld.wolfram.com/topics/Topology.html,-0.0022697256671408146
+https://mathworld.wolfram.com/topics/ProbabilityandStatistics.html,-0.0026016670271012485
+https://mathworld.wolfram.com/topics/RecreationalMathematics.html,-0.0028283102433460366
+https://mathworld.wolfram.com/topics/Geometry.html,-0.0031821412822236176
+https://mathworld.wolfram.com/topics/NumberTheory.html,-0.0039014717612900762
+https://mathworld.wolfram.com/,-0.015604052152206505
+https://mathworld.wolfram.com/whatsnew/,-0.015956985183200954
+https://mathworld.wolfram.com/topics/CalculusandAnalysis.html,-0.10807626456474538
+https://mathworld.wolfram.com/topics/AppliedMathematics.html,-0.3575450261713143
+dominant eigenvector: [-1.56040522e-02 -7.33497056e-16 -3.57545026e-01 -1.08076265e-01
+  5.04682489e-01  7.40565596e-01 -3.18214128e-03  1.33746438e-03
+ -3.90147176e-03 -2.60166703e-03 -2.82831024e-03 -2.26972567e-03
+ -2.26972567e-03 -2.26972567e-03  2.38293490e-01 -1.59569852e-02
+  2.60536388e-19  2.57152798e-19  2.57152798e-19  2.84458279e-17
+  1.12918942e-19  2.49133605e-17 -5.62630701e-17 -1.33976573e-16
+ -3.74380841e-18 -1.48651216e-17 -8.80896096e-19 -1.54156817e-18
+  2.20224024e-19  2.53257628e-17  4.67976051e-19  1.43145616e-18
+  1.32134414e-18 -3.30336036e-19  3.96403243e-18 -4.40448048e-19
+ -4.40448048e-19 -2.20224024e-19  1.32134414e-18  6.60672072e-19
+ -8.80896096e-19 -4.62470450e-18 -4.62470450e-18 -8.80896096e-19
+ -1.43145616e-18 -1.76179219e-18 -1.32134414e-18  7.04716877e-18
+ -1.76179219e-18  1.76179219e-18]
+dominant eigenvalue: 0.9473192358608578
