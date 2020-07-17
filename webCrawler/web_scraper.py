@@ -4,7 +4,7 @@ from urllib.parse import urlparse, urljoin
 from bs4 import BeautifulSoup
 import colorama
 import networkx as nx
-
+import matplotlib.pyplot as plt
 
 
 # init the colorama module
@@ -31,8 +31,10 @@ def get_all_website_links(url, max_urls):
     global diG
     global url_dict
     global idx
+    global root
     # all URLs of `url`
     urls = set()
+    children = set()
     # domain name of the URL without the protocol
     domain_name = urlparse(url).netloc
     parent = url_dict[url]
@@ -60,25 +62,31 @@ def get_all_website_links(url, max_urls):
             continue
 
         #found out the internal link
+
         #new child
+        if not href.startswith(root):
+            continue
+
         if href not in url_dict.keys():
             idx = idx + 1
-            if idx > max_urls:
+            if idx >= max_urls:
                 continue
             diG.add_node(idx)
             url_dict[href] = idx
 
+            #prepare new internal_urls to crawl
+            if urls != url:
+                urls.add(href)
+            else:
+                print("WHHHHHAAAAT")
+            internal_urls.add(href)
         #connection added
         child = url_dict[href]
         diG.add_edge(parent, child)
-
+        children.add(href)
         #print(f"{GREEN}[*] Internal link: {href}{RESET}")
-        #prepare new internal_urls to crawl
-        if href not in internal_urls:
-            urls.add(href)
-            internal_urls.add(href)
 
-    return urls
+    return urls, children
 
 
 # number of urls visited so far will be stored here
@@ -97,15 +105,12 @@ def crawl(url, max_urls):
     global total_urls_visited
     global idx
 
-    if idx >= max_urls:
-        return
-
     total_urls_visited += 1
 
     if total_urls_visited > max_urls:
         print("!!!Let's dance!!!!")
     else:
-        links = get_all_website_links(url, max_urls)
+        links, children = get_all_website_links(url, max_urls)
         for link in links:
             crawl(link, max_urls=max_urls)
 
@@ -114,13 +119,14 @@ def scraper(url, max_urls):
     global diG
     global url_dict
     global total_urls_visited
-
+    global root
     diG = nx.DiGraph()
     url_dict = {}
     idx = 0
 
     url_dict[url] = idx
     diG.add_node(idx)
+    root = url
     crawl(url, max_urls=max_urls)
 
     print("[+] Total Internal links:", len(internal_urls))
