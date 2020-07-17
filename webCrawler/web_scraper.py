@@ -6,6 +6,7 @@ import colorama
 import networkx as nx
 
 
+
 # init the colorama module
 colorama.init()
 GREEN = colorama.Fore.GREEN
@@ -34,49 +35,48 @@ def get_all_website_links(url, max_urls):
     urls = set()
     # domain name of the URL without the protocol
     domain_name = urlparse(url).netloc
+    parent = url_dict[url]
+    soup = BeautifulSoup(requests.get(url).content, "html.parser")
+    for a_tag in soup.findAll("a"):
+        href = a_tag.attrs.get("href")
+        if href == "" or href is None:
+            # href empty tag
+            continue
 
-    try:
-        soup = BeautifulSoup(requests.get(url).content, "html.parser")
-        for a_tag in soup.findAll("a"):
-            href = a_tag.attrs.get("href")
-            if href == "" or href is None:
-                # href empty tag
+        # join the URL if it's relative (not absolute link)
+        href = urljoin(url, href)
+        parsed_href = urlparse(href)
+        # remove URL GET parameters, URL fragments, etc.
+        href = parsed_href.scheme + "://" + parsed_href.netloc + parsed_href.path
+        if not is_valid(href):
+            # not a valid URL
+            continue
+
+        if domain_name not in href:
+            # external link
+            if href not in external_urls:
+                #print(f"{GRAY}[!] External link: {href}{RESET}")
+                external_urls.add(href)
+            continue
+
+        #found out the internal link
+        #new child
+        if href not in url_dict.keys():
+            idx = idx + 1
+            if idx > max_urls:
                 continue
+            diG.add_node(idx)
+            url_dict[href] = idx
 
-            # join the URL if it's relative (not absolute link)
-            href = urljoin(url, href)
-            parsed_href = urlparse(href)
-            # remove URL GET parameters, URL fragments, etc.
-            href = parsed_href.scheme + "://" + parsed_href.netloc + parsed_href.path
-            if not is_valid(href):
-                # not a valid URL
-                continue
-            if href in internal_urls:
-                # already in the set
-                continue
-            if domain_name not in href:
-                # external link
-                if href not in external_urls:
-                    #print(f"{GRAY}[!] External link: {href}{RESET}")
-                    external_urls.add(href)
-                continue
+        #connection added
+        child = url_dict[href]
+        diG.add_edge(parent, child)
 
-            if idx >= max_urls:
-                return urls
-
-            #real new child
-            if href not in url_dict.keys():
-                idx = idx + 1
-                diG.add_node(idx)
-                url_dict[href] = idx
-
-            #print(f"{GREEN}[*] Internal link: {href}{RESET}")
+        #print(f"{GREEN}[*] Internal link: {href}{RESET}")
+        #prepare new internal_urls to crawl
+        if href not in internal_urls:
             urls.add(href)
             internal_urls.add(href)
-
-            # add the internal link to url_dict
-    except:
-        pass
 
     return urls
 
@@ -106,10 +106,7 @@ def crawl(url, max_urls):
         print("!!!Let's dance!!!!")
     else:
         links = get_all_website_links(url, max_urls)
-        parent = url_dict[url]
         for link in links:
-            child = url_dict[link]
-            diG.add_edge(parent, child)
             crawl(link, max_urls=max_urls)
 
 def scraper(url, max_urls):
