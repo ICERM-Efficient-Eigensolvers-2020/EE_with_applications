@@ -4,7 +4,7 @@ import os
 THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
 
 info_list = []
-def InverseShift(A, mu=10, converge_range=0.0001, file_path=""):
+def InverseShift(A, mu=1.1, converge_range=0.0001, file_path=""):
     
     r, c = A.shape
 
