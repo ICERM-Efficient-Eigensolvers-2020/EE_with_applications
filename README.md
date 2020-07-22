@@ -68,6 +68,13 @@ The QR algorithm is a program that works to calculate the eigenvalues and eigenv
 ###### ***QR Decomposition***
 - Effect: Produce two matricies whose produce equals the inputted matrix A 
             
-- Input: square matrix A, normalize indicator, termination range
+- Input: square matrix A, normalize indicator
 	
-- Output: Q and R matricies  
+- Output: Q and R matricies 
+
+###### ***The Gram-Schmidt process***
+This method implements the modified Gram-Schmidt (GS) process. The modified GS subtracts one projection at a time verses the standard GS that subtracts all projections at once.
+
+###### ***The Householder transformations***
+
+###### ***Shifted QR decomposition***
