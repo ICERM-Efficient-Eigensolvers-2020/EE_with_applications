@@ -15,7 +15,7 @@ def qr_Algorithm_HH(x, converge_range):
     diff = 1
     
     lamb, u = spl.eig(x)
-    lamb = min(npy.abs(lamb))
+    lamb = max(npy.abs(lamb))
     
     # QR Algo using 
     while diff > converge_range:
@@ -24,7 +24,7 @@ def qr_Algorithm_HH(x, converge_range):
         x = npy.dot(R, Q) 
         
         eigenvalue = npy.diag(x)  #outputs only the values on the main diaginal
-        eigenvalue = min(npy.abs(eigenvalue))
+        eigenvalue = max(npy.abs(eigenvalue))
         
         diff = npy.abs(lamb - eigenvalue)
         
@@ -64,7 +64,7 @@ def qr_Algorithm_GS(x, converge_range):
     diff = 1
     
     lamb, u = spl.eig(x)
-    lamb = min(npy.abs(lamb))
+    lamb = max(npy.abs(lamb))
 
     while diff > converge_range:
         Q, R = qr_GS(x)
@@ -72,7 +72,7 @@ def qr_Algorithm_GS(x, converge_range):
         x = npy.dot(R, Q) 
         
         eigenvalue = npy.diag(x)  #outputs only the values on the main diaginal
-        eigenvalue = min(npy.abs(eigenvalue))
+        eigenvalue = max(npy.abs(eigenvalue))
         
         diff = npy.abs(lamb - eigenvalue)
         
@@ -92,7 +92,7 @@ def shiftedQR_Algorithm(x, converge_range):
     diff = 1
    
     lamb, u = spl.eig(x)
-    lamb = min(npy.abs(lamb))
+    lamb = max(npy.abs(lamb))
     
     while diff > converge_range:
         μ = x[[n-1],[n-1]]         # shift: μ = a_nn
@@ -101,7 +101,7 @@ def shiftedQR_Algorithm(x, converge_range):
         x = npy.dot(R, Q) + (μ*I)   # Updates matrix, by dot product of reverse QR and adding back the shift
         
         eigenvalue = npy.diag(x)  #outputs only the values on the main diaginal
-        eigenvalue = min(npy.abs(eigenvalue))
+        eigenvalue = max(npy.abs(eigenvalue))
         
         diff = npy.abs(lamb - eigenvalue)
         
