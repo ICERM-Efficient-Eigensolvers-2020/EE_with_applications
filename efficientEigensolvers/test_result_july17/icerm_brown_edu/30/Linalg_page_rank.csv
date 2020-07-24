@@ -1,0 +1,39 @@
+Link,Page Rank Score
+https://icerm.brown.edu/topical_workshops/tw-20-glu/,-0.0389458855764338
+https://icerm.brown.edu/tripods/tri-20-awds/,-0.0389458855764338
+https://icerm.brown.edu/summerug/2020/,-0.04542610685706097
+https://icerm.brown.edu/topical_workshops/tw-20-wiag/,-0.04557512300228142
+https://icerm.brown.edu/programs/,-0.18069263391881363
+https://icerm.brown.edu/,-0.18069263391881404
+https://icerm.brown.edu/summerug/,-0.1928147208667093
+https://icerm.brown.edu/about/jobs/,-0.19650393616466133
+https://icerm.brown.edu/news/,-0.19650393616466133
+https://icerm.brown.edu/support-icerm/,-0.19650393616466133
+https://icerm.brown.edu/collaborate/,-0.19675061627645396
+https://icerm.brown.edu/girlsgetmath/,-0.19675061627645396
+https://icerm.brown.edu/reuf/,-0.19675061627645396
+https://icerm.brown.edu/visit/,-0.19675061627645396
+https://icerm.brown.edu/visit/facilities/,-0.19675061627645396
+https://icerm.brown.edu/visit/travel/,-0.19675061627645396
+https://icerm.brown.edu/visit/finance/,-0.19675061627645396
+https://icerm.brown.edu/visit/providence/,-0.19675061627645396
+https://icerm.brown.edu/pds/,-0.19675061627645396
+https://icerm.brown.edu/visit/technology/,-0.196750616276454
+https://icerm.brown.edu/video_archive/,-0.196750616276454
+https://icerm.brown.edu/live-stream/,-0.196750616276454
+https://icerm.brown.edu/mathbytes/,-0.196750616276454
+https://icerm.brown.edu/about/,-0.196750616276454
+https://icerm.brown.edu/about/nsf/,-0.196750616276454
+https://icerm.brown.edu/about/people/,-0.196750616276454
+https://icerm.brown.edu/about/boards/,-0.196750616276454
+https://icerm.brown.edu/about/postdocs/,-0.196750616276454
+https://icerm.brown.edu/proposals/,-0.19699175135840352
+https://icerm.brown.edu/about/diversity/,-0.1972485982300042
+dominant eigenvector: [-0.18069263 -0.18069263 -0.19699175 -0.19281472 -0.19675062 -0.19675062
+ -0.19675062 -0.19675062 -0.19675062 -0.19675062 -0.19675062 -0.19675062
+ -0.19675062 -0.19675062 -0.19675062 -0.19675062 -0.19675062 -0.19675062
+ -0.19675062 -0.19675062 -0.19675062 -0.19675062 -0.1972486  -0.19650394
+ -0.19650394 -0.19650394 -0.04542611 -0.03894589 -0.03894589 -0.04557512]
+dominant eigenvalue: 0.968192251292549
+
+Distance for np and PowerMethod: 1.999879259897763

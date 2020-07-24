@@ -17,11 +17,12 @@ if __name__ == '__main__':
     dim_list = [4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 9192]
     func_list = [PowerMethod, qr_Algorithm_HH, qr_Algorithm_GS, shiftedQR_Algorithm, InverseMethod, InverseShift]
     func_list = [PowerMethod]
+    converge_range = 0.00001
     for dim in dim_list:
         #random A
         A = matricesGenerator(dim)
         t_start = time.time()
         for func in func_list:
-            eigenvec, eigenval = func(M, converge_range=converge_range)
+            eigenvec, eigenval = func(A, converge_range=converge_range)
         t_end = time.time()
         time_length = t_end - t_start
