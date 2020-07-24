@@ -1,10 +1,11 @@
 import numpy as np
+import tabulate
 import matplotlib.pyplot as plt
 import os
 THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
 
 info_list = []
-def InverseShift(A, mu=1.1, converge_range=0.0001, file_path=""):
+def InverseShift(A, mu=1.1, converge_range=0.0001, file_path="."):
     
     r, c = A.shape
 
@@ -44,7 +45,7 @@ def InverseShift(A, mu=1.1, converge_range=0.0001, file_path=""):
         diff_list.append(diff)
         idx = idx + 1
         
-    print_log(idx, vec_list, lambda_list, diff_list)
+    print_log(idx, vec_list, lambda_list, diff_list, file_path)
 
     #plot lambda_list
     x = [i for i in range(idx+1)]
@@ -63,7 +64,7 @@ def InverseShift(A, mu=1.1, converge_range=0.0001, file_path=""):
     return vec_list[-1], lambda_list[-1]
 
 
-def print_log(idx, vec_list, lambda_list, diff_list):
+def print_log(idx, vec_list, lambda_list, diff_list, file_path):
     info_list = [[i, vec_list[i], lambda_list[i], diff_list[i]] for i in range(idx)]
     print(file_path)
     with open(file_path+'/Inverse_Shift_performance.txt', 'w') as outputfile:
