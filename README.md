@@ -127,6 +127,7 @@ initialize a unit vector v_0 with n*1
         1. initialize a unit vector v_0 with n*1
         2. let \lambda_0 = v_0 * A * v_0
         3. let B = (A - \mu * I)
+	
 	4. while not reach convergence condition
                 update new vector: Solve B(v_k) = v_(k-1) for v_k
                 normalize: v_k = v_k / norm(v_k)
