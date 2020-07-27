@@ -122,28 +122,17 @@ This method implements the modified Gram-Schmidt (GS) process. The modified GS s
 
 - Pseudocode:
 
-
-        1. initialize a unit vector v_0 with n*1
-        
-        2. let \lambda_0 = v_0 * A * v_0
+initialize a unit vector v_0 with n*1
       
-        3. let B = (A - \mu * I)
-	
-	
-  
-		
         1. initialize a unit vector v_0 with n*1
-	
         2. let \lambda_0 = v_0 * A * v_0
-	
-        3. while not reach convergence condition
-                update new vector: Solve A(v_k) = v_(k-1) for v_k
+        3. let B = (A - \mu * I)
+	4. while not reach convergence condition
+                update new vector: Solve B(v_k) = v_(k-1) for v_k
                 normalize: v_k = v_k / norm(v_k)
                 update lambda: \lambda_k = v_k * A * v_k
                 convergence condition: |\lambda_k - \lambda_{k-1}|
-           
-           
-        4. return v_k, \lambda_k
+        5. return v_k, \lambda_k
 
  ###### ****Converge Process Print :**** 
  
