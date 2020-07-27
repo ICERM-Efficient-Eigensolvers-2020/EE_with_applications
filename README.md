@@ -81,7 +81,7 @@ This method implements the modified Gram-Schmidt (GS) process. The modified GS s
 
 
 
-## **Part IV: Inverse Power Iteration Method**
+## **Part IV: Inverse Power Iteration Method Implementation**
 
 ###### ***Inverse Iteration***
 
@@ -92,4 +92,50 @@ This method implements the modified Gram-Schmidt (GS) process. The modified GS s
 - Input: square matrix A, convergence range
 	
 - Output: smallest eigenvalue and its corresponding eigenvector
->>>>>>> 82fd3364d34ae0f1093b152b43941c79ab9c3706
+
+- Pseudocode:
+		
+        1. initialize a unit vector v_0 with n*1
+        2. let \lambda_0 = v_0 * A * v_0
+        3. while not reach convergence condition
+                update new vector: Solve A(v_k) = v_(k-1) for v_k
+                normalize: v_k = v_k / norm(v_k)
+                update lambda: \lambda_k = v_k * A * v_k
+                convergence condition: |\lambda_k - \lambda_{k-1}|
+           
+        4. return v_k, \lambda_k
+
+ ###### ****Converge Process Print :**** 
+ 
+`` def print_log(index, eigenvector_list, eigenvalue_list, err_list)``
+
+
+
+## **Part V: Inverse Iteration Method with Shift**
+
+###### ***Inverse Iteration with Shift***
+
+`def _InverseMethod_ (matrix: A, float: mu, float: converge_range)`   
+     
+- Effect: Produce a sequence of vectors that converges to an eigenvector corresponding to the eigenvalue input matrix A that is closest to the chosen shift
+            
+- Input: square matrix A, shift mu, convergence range
+	
+- Output: eigenvalue closest to mu and its corresponding eigenvector
+
+- Pseudocode:
+		
+        1. initialize a unit vector v_0 with n*1
+        2. let \lambda_0 = v_0 * A * v_0
+	3. let B = (A - \mu * I)
+        4. while not reach convergence condition
+                update new vector: Solve B(v_k) = v_(k-1) for v_k
+                normalize: v_k = v_k / norm(v_k)
+                update lambda: \lambda_k = v_k * A * v_k
+                convergence condition: |\lambda_k - \lambda_{k-1}|
+           
+        5. return v_k, \lambda_k
+
+ ###### ****Converge Process Print :**** 
+ 
+`` def print_log(index, eigenvector_list, eigenvalue_list, err_list)``
