@@ -132,6 +132,7 @@ initialize a unit vector v_0 with n*1
                 normalize: v_k = v_k / norm(v_k)
                 update lambda: \lambda_k = v_k * A * v_k
                 convergence condition: |\lambda_k - \lambda_{k-1}|
+		
         5. return v_k, \lambda_k
 
  ###### ****Converge Process Print :**** 
