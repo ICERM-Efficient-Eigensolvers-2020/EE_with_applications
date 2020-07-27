@@ -78,3 +78,18 @@ This method implements the modified Gram-Schmidt (GS) process. The modified GS s
 ###### ***The Householder transformations***
 
 ###### ***Shifted QR decomposition***
+
+
+
+## **Part IV: Inverse Power Iteration Method**
+
+###### ***Inverse Iteration***
+
+`def _InverseMethod_ (matrix: A, float: converge_range)`   
+     
+- Effect: Produce a sequence of vectors that converges to an eigenvector corresponding to the eigenvalue of smallest magnitude of input matrix A
+            
+- Input: square matrix A, convergence range
+	
+- Output: smallest eigenvalue and its corresponding eigenvector
+>>>>>>> 82fd3364d34ae0f1093b152b43941c79ab9c3706
