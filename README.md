@@ -110,9 +110,6 @@ This method implements the modified Gram-Schmidt (GS) process. The modified GS s
 `` def print_log(index, eigenvector_list, eigenvalue_list, err_list)``
 
 
-
-## **Part V: Inverse Iteration Method with Shift**
-
 ###### ***Inverse Iteration with Shift***
 
 `def _InverseMethod_ (matrix: A, float: mu, float: converge_range)`   
