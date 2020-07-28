@@ -12,6 +12,15 @@ def InverseMethod(A, converge_range=0.0001, file_path="."):
     if r != c:
         raise Exception("not a square matrix")
 
+    #testing to determine if the matrix is invertible    
+    sing = 0
+    det_A = np.linalg.det(A)
+
+    if det_A != sing:
+        print("matrix is invertible")
+    else:    
+        raise Exception("not an invertible matrix")    
+    
     #initialize eigenvectors
     vec_list = []
     lambda_list = []
