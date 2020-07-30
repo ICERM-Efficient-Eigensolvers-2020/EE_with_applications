@@ -39,7 +39,7 @@ sns.set_context("notebook", rc={"font.size":16,
 if __name__ == '__main__':
     with open('performance_comparison.csv', 'w') as csvfile:
         csvwriter = csv.writer(csvfile)
-        top_dim = 4
+        top_dim = 50
         dim_list = [5+10*i for i in range(top_dim)]
         func_list = [QR_unshifted, QR_shifted, QR_wilkinson_shift]
         convergence_condition = 0.0001
@@ -50,16 +50,16 @@ if __name__ == '__main__':
                 iteration_wo_hessen = 0
                 iteration_w_hessen = 0
 
-                for _ in range(20):
+                for _ in range(100):
                     #generate the random matrix
                     A, eigenvals = matrix_generator(dim)
                     eigenvec, eigenval, iterations = func(A, convergence_condition)
-                    iteration_wo_hessen = iterations/20 + iteration_wo_hessen
+                    iteration_wo_hessen = iterations/100 + iteration_wo_hessen
 
                     #with_hessenberge:
                     H,Q = hessenberg(A, calc_q=True)
                     eigenvec, eigenval, iterations = func(H, convergence_condition)
-                    iteration_w_hessen = iterations/20 + iteration_w_hessen
+                    iteration_w_hessen = iterations/100 + iteration_w_hessen
 
                 iteration_wo_hessen_list.append(iteration_wo_hessen)
                 iteration_w_hessen_list.append(iteration_w_hessen)
@@ -67,8 +67,8 @@ if __name__ == '__main__':
             csvwriter.writerow([{func.__name__}])
             csvwriter.writerow(iteration_wo_hessen_list)
             csvwriter.writerow(iteration_w_hessen_list)
-            plt.plot(dim_list, iteration_wo_hessen_list, label= f'{func.__name__} W/O Hessenberg')
-            plt.plot(dim_list, iteration_w_hessen_list, label= f'{func.__name__} W Hessenberg')
+            plt.plot(dim_list, iteration_wo_hessen_list, label=f'{func.__name__} W/O Hessenberg')
+            plt.plot(dim_list, iteration_w_hessen_list, label=f'{func.__name__} W Hessenberg')
 
 
 
