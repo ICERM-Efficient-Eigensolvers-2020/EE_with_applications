@@ -33,11 +33,12 @@ def make_householder(a):
     return H
 
 def QR_unshifted(A, convergence_condition=0.0001):
-    eigenvals, eigenvectors = la.eig(A)
+    idx = 0
     N = A.shape[0]
     pQ = np.identity(N)
 
     while True:
+        idx = idx + 1
         Q, R = qr(A)
         lam = A[0,0]
         A = np.matmul(R, Q)
@@ -48,7 +49,7 @@ def QR_unshifted(A, convergence_condition=0.0001):
 
     eigenv = pQ[:, 0]
     eigenv = eigenv / np.linalg.norm(eigenv)
-    return eigenv, A[0,0]
+    return eigenv, A[0,0], idx
 
 ######shifted#######
 
@@ -58,9 +59,11 @@ def WilkinsonShift( a, b, c):
     return c - np.sign(delta) * b**2/(np.abs(delta) + math.sqrt(delta**2+b**2))
 
 def QR_shifted(A, convergence_condition=0.00001):
+    idx = 0
     N = A.shape[0]
     pQ = np.identity(N)
     while True:
+        idx = idx + 1
         lam = A[0, 0]
         #pick a shift
         mu = A[N-1,N-1]
@@ -73,12 +76,13 @@ def QR_shifted(A, convergence_condition=0.00001):
 
     eigenv = pQ[:, 0]
     eigenv = eigenv / np.linalg.norm(eigenv)
-    return eigenv, A[0, 0]
+    return eigenv, A[0, 0], idx
 
 
 ##########################Rayleigh Quotient Iteration######################
 
 def RayleighQuotientIteration(A, convergence_condition=0.00001):
+    idx = 0
     r, c = A.shape
    # initialize eigenvectors
     v = np.zeros(r)
@@ -86,6 +90,7 @@ def RayleighQuotientIteration(A, convergence_condition=0.00001):
     # initialize eigenvalues
     lam = 1
     while True:
+        idx = idx + 1
         IA = A - lam * np.identity(r)
         v_new = np.linalg.solve(IA, v)
         v_new = v_new / np.linalg.norm(v_new)
@@ -94,11 +99,12 @@ def RayleighQuotientIteration(A, convergence_condition=0.00001):
             break
         lam = lam_new
         v = v_new
-    return v_new, lam_new
+    return v_new, lam_new, idx
 
 #########################Power Iteration Method#############################
 
 def PowerMethod(A, convergence_condition=0.00001):
+    idx = 0
     r, c = A.shape
 
     if r != c:
@@ -109,6 +115,7 @@ def PowerMethod(A, convergence_condition=0.00001):
     # initialize eigenvalues
     lam = v.dot(A.dot(v))
     while True:
+        idx = idx + 1
         # new vector
         v_new = A.dot(v)
         v_new = v_new / np.linalg.norm(v_new)
@@ -118,7 +125,7 @@ def PowerMethod(A, convergence_condition=0.00001):
             break
         lam = lam_new
         v = v_new
-    return v_new, lam_new
+    return v_new, lam_new, idx
 
 
 

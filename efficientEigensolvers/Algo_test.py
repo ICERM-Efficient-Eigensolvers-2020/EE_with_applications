@@ -26,12 +26,9 @@ def correctness_test(url, max_urls, func_list):
     f2 = open(internal_url_dict_file, "r")
     contents = f2.read()
     internal_url_dict = ast.literal_eval(contents)
-
-
-
     ###########################################
     # correctness test
-    f = open(result_folder_path + "/july_24_Linalg_page_rank.csv", "w", newline='')
+    f = open(result_folder_path + "/july_30_Linalg_page_rank.csv", "w", newline='')
     w, v = LA.eigh(M)
     val_list = w.tolist()
     idx = val_list.index(max(val_list))
