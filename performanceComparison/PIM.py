@@ -6,7 +6,6 @@ import os
 THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
 info_list = []
 
-
 def PowerMethod(A, norm_indicator=True, converge_range=0.0001, file_path=""):
     r, c = A.shape
 

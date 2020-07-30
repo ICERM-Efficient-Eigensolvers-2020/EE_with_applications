@@ -2,7 +2,6 @@
 
 import scipy.linalg as la
 import numpy as np
-from tabulate import tabulate
 import matplotlib.pyplot as plt
 import os
 from matricesGenerator import matrix_generator
@@ -53,10 +52,31 @@ def QR_unshifted(A, convergence_condition=0.0001):
 
 ######shifted#######
 
-def WilkinsonShift( a, b, c):
+def WilkinsonShift( a, b, c, d):
     # Calculate Wilkinson's shift for symmetric matrices:
     delta = (a-c)/2
-    return c - np.sign(delta) * b**2/(np.abs(delta) + math.sqrt(delta**2+b**2))
+    return c - np.sign(delta) * b*d /(np.abs(delta) + math.sqrt( delta**2 + b*d))
+
+def QR_wilkinson_shift(A, convergence_condition=0.00001):
+    idx = 0
+    N = A.shape[0]
+    pQ = np.identity(N)
+    while True:
+        idx = idx + 1
+        lam = A[0, 0]
+        # pick a shift
+        mu = WilkinsonShift(A[N-2,N-2], A[N-2,N-1], A[N-1, N-1], A[N-1,N-2])
+        Q, R = qr(A - mu * np.identity(N))
+        A = np.matmul(R, Q) + mu * np.identity(N)
+        pQ = np.matmul(pQ, Q)
+        # calculate the convergence condition
+        if np.abs(A[0, 0] - lam) < convergence_condition:
+            break
+
+    eigenv = pQ[:, 0]
+    eigenv = eigenv / np.linalg.norm(eigenv)
+    return eigenv, A[0, 0], idx
+
 
 def QR_shifted(A, convergence_condition=0.00001):
     idx = 0
@@ -78,7 +98,8 @@ def QR_shifted(A, convergence_condition=0.00001):
     eigenv = eigenv / np.linalg.norm(eigenv)
     return eigenv, A[0, 0], idx
 
-
+def QR_deflation(A, convergence_condition=0.00001):
+    return
 ##########################Rayleigh Quotient Iteration######################
 
 def RayleighQuotientIteration(A, convergence_condition=0.00001):
