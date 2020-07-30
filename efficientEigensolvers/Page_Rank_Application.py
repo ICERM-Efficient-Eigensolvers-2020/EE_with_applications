@@ -77,7 +77,7 @@ def web_scrawler_application(url, max_urls,  func_list, recal, weight=0.15):
                 eigenvec, eigenval = func(M, converge_range=converge_range)
                 eigenval = max(np.abs(eigenval))
                 eigenvec = eigenvec[[0][0]]
-                eigenvec = np.linalg.norm(eigenvec)
+                eigenvec = eigenvec/np.linalg.norm(eigenvec)
             else:
                 eigenvec, eigenval = func(M, converge_range=converge_range, file_path=result_folder_path)
             t_end = time.time()

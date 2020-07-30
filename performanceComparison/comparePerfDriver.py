@@ -1,28 +1,31 @@
 import sys, os
 THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
-eigensovers_folder = THIS_FOLDER[:-25] + "efficientEigensolvers/"
-sys.path.append(eigensovers_folder)
-import matricesGenerator
+from efficient_eigensolvers import PowerMethod, QR_unshifted, QR_shifted, RayleighQuotientIteration
+from matricesGenerator import matrix_generator
 import time
-
-import Page_Rank_Utils as pru
-from Power_Iteration import PowerMethod
-from QR_Algorithm import qr_Algorithm_HH, qr_Algorithm_GS, shiftedQR_Algorithm
-from Inverse_Iteration import InverseMethod
-from Inverse_Iteration_w_shift import InverseShift
+import math
 import matplotlib.pyplot as plt
-
+from scipy.linalg import hessenberg
 
 if __name__ == '__main__':
-    dim_list = [4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 9192]
-    func_list = [PowerMethod, qr_Algorithm_HH, qr_Algorithm_GS, shiftedQR_Algorithm, InverseMethod, InverseShift]
-    func_list = [PowerMethod]
-    converge_range = 0.00001
-    for dim in dim_list:
-        #random A
-        A = matricesGenerator(dim)
-        t_start = time.time()
-        for func in func_list:
-            eigenvec, eigenval = func(A, converge_range=converge_range)
-        t_end = time.time()
-        time_length = t_end - t_start
+    top_dim = 10
+    dim_list = [2**i for i in range(2, top_dim)]
+    func_list = [PowerMethod, QR_unshifted, QR_shifted, RayleighQuotientIteration]
+
+    convergence_condition = 0.00001
+    for func in func_list:
+        time_list = []
+        for dim in dim_list:
+            A, eigenvals = matrix_generator(dim)
+            t_start = time.time()
+            eigenvec, eigenval = func(A, convergence_condition)
+            t_end = time.time()
+            time_length = t_end - t_start
+            time_list.append(time_length)
+        plt.plot(dim_list, time_list ,label=func.__name__)
+    plt.xlabel("Matrix Dimension")
+    plt.ylabel("Time")
+    plt.title("Performance Comparison")
+    plt.legend()
+    plt.save("performance_compare.png")
+    plt.show()

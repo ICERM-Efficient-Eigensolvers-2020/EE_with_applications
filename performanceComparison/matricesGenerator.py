@@ -3,10 +3,7 @@ import random
 import numpy as np
 
 def lambda_generator(dim):
-    randomlist = []
-    for i in range(0, dim):
-        n = random.random()
-    randomlist.append(n)
+    randomlist = [random.random() for i in range(0, dim)]
     return randomlist
 
 
@@ -15,8 +12,7 @@ def matrix_generator(dim):
     lambdas = lambda_generator(dim)
     D = np.zeros((dim, dim), float)
     np.fill_diagonal(D, lambdas)
-    A = np.zeros(shape=(dim,dim), dtype=float)
-    for j in range(dim):
-        A = A + M[:, j].dot(M[:,j].T) * lambdas[j]
+    A = np.matmul(M, D)
+    A = np.matmul(A, np.linalg.inv(M))
 
-    return A
+    return A, lambdas

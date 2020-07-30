@@ -31,7 +31,7 @@ def correctness_test(url, max_urls, func_list):
 
     ###########################################
     # correctness test
-    f = open(result_folder_path + "/Linalg_page_rank.csv", "w", newline='')
+    f = open(result_folder_path + "/july_24_Linalg_page_rank.csv", "w", newline='')
     w, v = LA.eigh(M)
     val_list = w.tolist()
     idx = val_list.index(max(val_list))
@@ -58,11 +58,16 @@ def correctness_test(url, max_urls, func_list):
     for func in func_list:
         try:
             if func in [qr_Algorithm_GS, qr_Algorithm_HH, shiftedQR_Algorithm]:
-                iterations = M.shape[0]
                 eigenvec, eigenval = func(M, converge_range=converge_range)
+                eigenval = max(np.abs(eigenval))
+                eigenvec = eigenvec[[0][0]]
+                eigenvec = eigenvec/np.linalg.norm(eigenvec)
+
             else:
                 eigenvec, eigenval = func(M, converge_range=converge_range, file_path=result_folder_path)
 
+            f.write(f"\n {func.__name__} eigenvalue is {eigenval}")
+            f.write(f"\n {func.__name__} eigenvector is {eigenvec}")
             dist = np.linalg.norm(eigenvec - eigenvec_np)
             f.write(f"\nDistance for np and {func.__name__}: {dist}")
         except:
@@ -74,6 +79,6 @@ def correctness_test(url, max_urls, func_list):
 
 if __name__ == '__main__':
     url = "https://icerm.brown.edu/"
-    max_urls = 30
-    func_list = [PowerMethod]
+    max_urls = 50
+    func_list = [PowerMethod, qr_Algorithm_HH, qr_Algorithm_GS, shiftedQR_Algorithm, InverseMethod, InverseShift]
     correctness_test(url, max_urls, func_list)
