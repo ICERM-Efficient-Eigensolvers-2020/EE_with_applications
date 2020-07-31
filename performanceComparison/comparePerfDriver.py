@@ -40,12 +40,11 @@ if __name__ == '__main__':
 
     t = time.localtime()
     current_time = time.strftime("%H-%M-%S", t)
-    top_dim = 1000
-    avg = 20
+    top_dim = 150
+    avg = 5
     convergence_condition = 0.0001
-    dim_list = [5+5*i for i in range(top_dim)]
+    dim_list = [5+2*i for i in range(top_dim)]
     func_list = [QR_unshifted, QR_shifted, QR_wilkinson_shift]
-
 
     Hessen_dict = {}
     No_Hessen_dict = {}
