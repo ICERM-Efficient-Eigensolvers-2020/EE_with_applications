@@ -7,6 +7,8 @@ import math
 import matplotlib.pyplot as plt
 from scipy.linalg import hessenberg
 import csv
+import numpy as np
+from scipy import interpolate
 
 import seaborn as sns
 """
@@ -41,9 +43,9 @@ if __name__ == '__main__':
     t = time.localtime()
     current_time = time.strftime("%H-%M-%S", t)
     top_dim = 100
-    avg = 5
+    avg = 10
     convergence_condition = 0.00001
-    dim_list = [5+3*i for i in range(top_dim)]
+    dim_list = [5+10*i for i in range(top_dim)]
     func_list = [QR_unshifted, QR_shifted, QR_wilkinson_shift]
 
     Hessen_dict = {}
@@ -97,20 +99,39 @@ if __name__ == '__main__':
         r, g, b = tableau20[i]
         tableau20[i] = (r / 255., g / 255., b / 255.)
 
-    fig, ax = plt.subplots()
-    ax.spines["top"].set_visible(False)
-    ax.spines["bottom"].set_visible(False)
-    ax.spines["right"].set_visible(False)
-    ax.spines["left"].set_visible(False)
-    coloridx = 4
+    fig, (ax1, ax2) = plt.subplots(2)
+    axs = [ax1, ax2]
+    for ax in axs:
+        ax.spines["top"].set_visible(False)
+        ax.spines["bottom"].set_visible(False)
+        ax.spines["right"].set_visible(False)
+        ax.spines["left"].set_visible(False)
+        ax.get_xaxis().tick_bottom()
+        ax.get_yaxis().tick_left()
+
+        ax.xaxis.set_tick_params(length=0)
+        ax.yaxis.set_tick_params(length=0)
+        sns.despine(left=True, bottom=True)
+    coloridx = 0
     for k, v in Hessen_dict.items():
-        ax.plot(dim_list, v, label=f'{k} W Hessenberg', color=tableau20[coloridx])
+        #axs[0].plot(dim_list, v)
+        x_new = np.linspace(5, 5 + 10*(top_dim-1), 5 * top_dim)
+        a_BSpline = interpolate.make_interp_spline(dim_list, v)
+        y_new = a_BSpline(x_new)
+        #pal=sns.dark_palette("palegreen", as_cmap=True)
+        axs[0].plot(x_new,y_new, label=f'{k} W Hessenberg', color=tableau20[coloridx])
+        axs[0].legend(frameon=False)
         #ax.annotate( xy=(dim_list[-1],v[-1]), xytext=(5,0), textcoords='offset points', s=f'{k} w Hessenberg', va='center')
         coloridx = coloridx + 1
 
-    coloridx = 10
     for k, v in No_Hessen_dict.items():
-        ax.plot(dim_list, v, label=f'{k} W/O Hessenberg', color=tableau20[coloridx])
+
+        #axs[1].plot(dim_list, v)
+        x_new = np.linspace(5, 5 + 10*(top_dim-1) , 5 * top_dim)
+        a_BSpline = interpolate.make_interp_spline(dim_list, v,k=3)
+        y_new = a_BSpline(x_new)
+        axs[1].plot(x_new, y_new,label=f'{k} W/O Hessenberg',color=tableau20[coloridx])
+        axs[1].legend(frameon=False)
         coloridx = coloridx + 1
         #ax.annotate(xy=(dim_list[-1], v[-1]), xytext=(5, 0), textcoords='offset points',s=f'{k} w/o Hessenberg', va='center')
 
@@ -118,12 +139,9 @@ if __name__ == '__main__':
 
     # Ensure that the axis ticks only show up on the bottom and left of the plot.
     # Ticks on the right and top of the plot are generally unnecessary chartjunk.
-    ax.get_xaxis().tick_bottom()
-    ax.get_yaxis().tick_left()
-    plt.xlabel("Matrix Dimension")
-    plt.ylabel("Iteration")
+
+    #plt.xlabel("Matrix Dimension")
+    #plt.ylabel("Iteration")
     plt.title("Performance Comparison")
-    sns.despine(left=True, bottom=True)
-    plt.legend(frameon=False)
     plt.savefig(f"performance_compare_iteration_VNC_{current_time}.png")
     plt.show()
