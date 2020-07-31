@@ -33,7 +33,7 @@ def web_scrawler_application(url, max_urls,  func_list, recal, weight=0.15):
     url_w = url.replace('.', '_')
     url_w = url_w.replace('/', '')
     url_w = re.sub('https:', '', url_w)
-    directory = f"test_result_july17/{url_w}/{max_urls}"
+    directory = f"test_result_july30/{url_w}/{max_urls}"
     result_folder_path = os.path.join(THIS_FOLDER, directory)
     if not os.path.exists(result_folder_path):
         print("make it!")

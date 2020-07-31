@@ -1,0 +1,50 @@
+Link,Page Rank Score
+https://www.urbandictionary.com/yesterday.php,0.7304100974746464
+https://www.urbandictionary.com/,0.4281809729786101
+https://www.urbandictionary.com/define.php,0.2162764857839364
+https://www.urbandictionary.com/auth/facebook,0.17811462320800212
+https://www.urbandictionary.com/auth/google_oauth2,0.1720586067264867
+https://www.urbandictionary.com/add.php,0.16852651666817223
+https://www.urbandictionary.com/popular.php,0.1096052516210511
+https://www.urbandictionary.com/vote.php,0.1096052516210511
+https://www.urbandictionary.com/random.php,0.10960525162105107
+https://www.urbandictionary.com/remove.php,0.10960525162105107
+https://www.urbandictionary.com/browse.php,0.10960525162105106
+https://www.urbandictionary.com/users.php,0.10960525162105106
+https://www.urbandictionary.com/category.php,0.10960525162105103
+https://www.urbandictionary.com/remove.form.php,0.10113560506284137
+https://www.urbandictionary.com/author.php,0.10113560506284135
+https://www.urbandictionary.com/subscribe.php,0.08052685468325059
+https://www.urbandictionary.com/editor.php,0.07635313259336513
+https://www.urbandictionary.com/login/,0.036899516322392106
+https://www.urbandictionary.com/facebook,0.036899516322392106
+https://www.urbandictionary.com/marketplace/,0.0368995163223921
+https://www.urbandictionary.com/help/,0.0368995163223921
+https://www.urbandictionary.com/lite/,0.036899516322392086
+https://www.urbandictionary.com/games/,0.036899516322392086
+https://www.urbandictionary.com/fundraisers/,0.034659161927592455
+https://www.urbandictionary.com/r.php,0.03465916192759245
+https://www.urbandictionary.com/directory/groups/,0.03465916192759245
+https://www.urbandictionary.com/pages/create/,0.03465916192759245
+https://www.urbandictionary.com/privacy/explanation,0.03465916192759245
+https://www.urbandictionary.com/allactivity,0.03465916192759245
+https://www.urbandictionary.com/directory/people/,0.03465916192759244
+https://www.urbandictionary.com/directory/pages/,0.03465916192759244
+https://www.urbandictionary.com/pages/category/,0.03465916192759244
+https://www.urbandictionary.com/directory/places/,0.03465916192759244
+https://www.urbandictionary.com/local/lists/245019872666104/,0.03465916192759244
+https://www.urbandictionary.com/biz/directory/,0.03465916192759244
+https://www.urbandictionary.com/ad_campaign/landing.php,0.03465916192759244
+https://www.urbandictionary.com/careers/,0.03465916192759244
+https://www.urbandictionary.com/policies/cookies/,0.03465916192759244
+https://www.urbandictionary.com/policies,0.03465916192759244
+https://www.urbandictionary.com/settings,0.03465916192759244
+https://www.urbandictionary.com/places/,0.03465916192759243
+dominant eigenvector: [0.42818097 0.10960525 0.10960525 0.7304101  0.10960525 0.10960525
+ 0.16852652 0.10960525 0.10960525 0.21627649 0.10113561 0.10113561
+ 0.10960525 0.08052685 0.17811462 0.17205861 0.03465916 0.03689952
+ 0.03689952 0.03465916 0.03465916 0.03465916 0.03465916 0.03689952
+ 0.03465916 0.03689952 0.03465916 0.03465916 0.03465916 0.03465916
+ 0.03689952 0.03465916 0.03465916 0.03465916 0.03465916 0.03465916
+ 0.03465916 0.03689952 0.03465916 0.03465916 0.07635313]
+dominant eigenvalue: 1.0000238545717615
