@@ -42,8 +42,8 @@ if __name__ == '__main__':
 
     t = time.localtime()
     current_time = time.strftime("%H-%M-%S", t)
-    top_dim = 10
-    step = 100
+    top_dim = 30
+    step = 50
     avg = 4
     convergence_condition = 0.00001
     dim_list = [5 + step *i for i in range(top_dim)]
