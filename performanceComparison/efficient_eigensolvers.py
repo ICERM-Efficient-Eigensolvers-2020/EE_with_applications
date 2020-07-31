@@ -38,7 +38,7 @@ def QR_unshifted(A, convergence_condition=0.0001):
 
     while True:
         idx = idx + 1
-        Q, R = qr(A)
+        Q, R = np.linalg.qr(A)
         lam = A[0,0]
         A = np.matmul(R, Q)
         pQ = np.matmul(pQ,Q)
@@ -52,10 +52,10 @@ def QR_unshifted(A, convergence_condition=0.0001):
 
 ######shifted#######
 
-def WilkinsonShift( a, b, c, d):
+def WilkinsonShift( a, b, c):
     # Calculate Wilkinson's shift for symmetric matrices:
     delta = (a-c)/2
-    return c - np.sign(delta) * b*d /(np.abs(delta) + math.sqrt( delta**2 + b*d))
+    return c - np.sign(delta) * b**2 /(np.abs(delta) + math.sqrt( delta**2 + b**2))
 
 def QR_wilkinson_shift(A, convergence_condition=0.00001):
     idx = 0
@@ -65,8 +65,8 @@ def QR_wilkinson_shift(A, convergence_condition=0.00001):
         idx = idx + 1
         lam = A[0, 0]
         # pick a shift
-        mu = WilkinsonShift(A[N-2,N-2], A[N-2,N-1], A[N-1, N-1], A[N-1,N-2])
-        Q, R = qr(A - mu * np.identity(N))
+        mu = WilkinsonShift(A[N-2,N-2], A[N-2,N-1], A[N-1, N-1])
+        Q, R = np.linalg.qr(A - mu * np.identity(N))
         A = np.matmul(R, Q) + mu * np.identity(N)
         pQ = np.matmul(pQ, Q)
         # calculate the convergence condition
@@ -87,7 +87,7 @@ def QR_shifted(A, convergence_condition=0.00001):
         lam = A[0, 0]
         #pick a shift
         mu = A[N-1,N-1]
-        Q, R = qr(A - mu * np.identity(N))
+        Q, R = np.linalg.qr(A - mu * np.identity(N))
         A = np.matmul(R, Q) + mu * np.identity(N)
         pQ = np.matmul(pQ, Q)
         # calculate the convergence condition

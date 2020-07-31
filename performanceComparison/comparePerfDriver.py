@@ -40,10 +40,10 @@ if __name__ == '__main__':
 
     t = time.localtime()
     current_time = time.strftime("%H-%M-%S", t)
-    top_dim = 150
+    top_dim = 100
     avg = 5
-    convergence_condition = 0.0001
-    dim_list = [5+2*i for i in range(top_dim)]
+    convergence_condition = 0.00001
+    dim_list = [5+3*i for i in range(top_dim)]
     func_list = [QR_unshifted, QR_shifted, QR_wilkinson_shift]
 
     Hessen_dict = {}
@@ -102,13 +102,13 @@ if __name__ == '__main__':
     ax.spines["bottom"].set_visible(False)
     ax.spines["right"].set_visible(False)
     ax.spines["left"].set_visible(False)
-    coloridx = 0
+    coloridx = 4
     for k, v in Hessen_dict.items():
         ax.plot(dim_list, v, label=f'{k} W Hessenberg', color=tableau20[coloridx])
         #ax.annotate( xy=(dim_list[-1],v[-1]), xytext=(5,0), textcoords='offset points', s=f'{k} w Hessenberg', va='center')
         coloridx = coloridx + 1
 
-    coloridx = 6
+    coloridx = 10
     for k, v in No_Hessen_dict.items():
         ax.plot(dim_list, v, label=f'{k} W/O Hessenberg', color=tableau20[coloridx])
         coloridx = coloridx + 1
