@@ -42,10 +42,11 @@ if __name__ == '__main__':
 
     t = time.localtime()
     current_time = time.strftime("%H-%M-%S", t)
-    top_dim = 100
-    avg = 10
+    top_dim = 10
+    step = 100
+    avg = 4
     convergence_condition = 0.00001
-    dim_list = [5+10*i for i in range(top_dim)]
+    dim_list = [5 + step *i for i in range(top_dim)]
     func_list = [QR_unshifted, QR_shifted, QR_wilkinson_shift]
 
     Hessen_dict = {}
@@ -115,7 +116,7 @@ if __name__ == '__main__':
     coloridx = 0
     for k, v in Hessen_dict.items():
         #axs[0].plot(dim_list, v)
-        x_new = np.linspace(5, 5 + 10*(top_dim-1), 5 * top_dim)
+        x_new = np.linspace(5, 5 + step *(top_dim-1), step * top_dim)
         a_BSpline = interpolate.make_interp_spline(dim_list, v)
         y_new = a_BSpline(x_new)
         #pal=sns.dark_palette("palegreen", as_cmap=True)
@@ -127,7 +128,7 @@ if __name__ == '__main__':
     for k, v in No_Hessen_dict.items():
 
         #axs[1].plot(dim_list, v)
-        x_new = np.linspace(5, 5 + 10*(top_dim-1) , 5 * top_dim)
+        x_new = np.linspace(5, 5 + step*(top_dim-1) , step * top_dim)
         a_BSpline = interpolate.make_interp_spline(dim_list, v,k=3)
         y_new = a_BSpline(x_new)
         axs[1].plot(x_new, y_new,label=f'{k} W/O Hessenberg',color=tableau20[coloridx])
@@ -143,5 +144,7 @@ if __name__ == '__main__':
     #plt.xlabel("Matrix Dimension")
     #plt.ylabel("Iteration")
     plt.title("Performance Comparison")
-    plt.savefig(f"performance_compare_iteration_VNC_{current_time}.png")
+
+    fig.set_size_inches(11, 7)
+    plt.savefig(f"performance_compare_iteration_VNC_{current_time}.png",dpi=100)
     plt.show()
