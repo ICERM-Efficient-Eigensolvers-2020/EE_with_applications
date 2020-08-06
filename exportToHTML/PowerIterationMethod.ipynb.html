@@ -1,0 +1,170 @@
+<html>
+<head>
+<title>PowerIterationMethod.ipynb</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+PowerIterationMethod.ipynb</font>
+</center></td></tr></table>
+<pre><span class="s0">{ 
+ &quot;cells&quot;: [ 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: null, 
+   &quot;outputs&quot;: [], 
+   &quot;source&quot;: [ 
+    &quot;import numpy as np\n&quot;, 
+    &quot;from tabulate import tabulate\n&quot;, 
+    &quot;import matplotlib.pyplot as plt\n&quot;, 
+    &quot;import os\n&quot;, 
+    &quot;THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))\n&quot;, 
+    &quot;info_list = []\n&quot;, 
+    &quot;def print_log(idx, v_list, lambda_list, diff_list, file_path):\n&quot;, 
+    &quot;    info_list = [[i, v_list[i], lambda_list[i], diff_list[i]] for i in range(idx)]\n&quot;, 
+    &quot;    print(file_path)\n&quot;, 
+    &quot;    with open(file_path + '/Power_Iteration_performance.txt', 'w') as outputfile:\n&quot;, 
+    &quot;        outputfile.write(tabulate(info_list, headers=[\&quot;iteration\&quot;,\&quot;eigenvector\&quot;, \&quot;eigenvalue\&quot;,\&quot;lambda_diff\&quot;]))&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;pycharm&quot;: { 
+     &quot;name&quot;: &quot;#%%\n&quot; 
+    } 
+   } 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;markdown&quot;, 
+   &quot;source&quot;: [ 
+    &quot;# Power Iteration Method\n&quot;, 
+    &quot;\n&quot;, 
+    &quot;Power Iteration is utilizing the convergence of the sequence\n&quot;, 
+    &quot;##### $$ \\frac{x}{||x||}, \\frac{Ax}{||Ax||}, \\frac{A^2x}{||A^2x|}, \\frac{A^3x}{||A^3x||}, \\cdots$$\n&quot;, 
+    &quot;For any matrix $$A$$ with a unique dominant eigenvalue, the sequence would converge to $$A$$'s eigenvector corresponding to its dominant eigenvalue.\n&quot;, 
+    &quot; \n&quot;, 
+    &quot;To calculate an estimated natural eigenvalue for a give vector, we use Rayleigh Quotient to measure the value making this vector like an eigenvector the most. \n&quot;, 
+    &quot;\n&quot;, 
+    &quot;$$\n&quot;, 
+    &quot;\n&quot;, 
+    &quot;$$&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;pycharm&quot;: { 
+     &quot;name&quot;: &quot;#%% md\n&quot; 
+    } 
+   } 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;code&quot;, 
+   &quot;execution_count&quot;: null, 
+   &quot;outputs&quot;: [], 
+   &quot;source&quot;: [ 
+    &quot;def PowerMethod(A,norm_indicator=True, converge_range=0.0001, file_path=\&quot;\&quot;):\n&quot;, 
+    &quot;\n&quot;, 
+    &quot;    r, c = A.shape\n&quot;, 
+    &quot;\n&quot;, 
+    &quot;    if r != c:\n&quot;, 
+    &quot;        raise Exception(\&quot;not a square matrix\&quot;)\n&quot;, 
+    &quot;\n&quot;, 
+    &quot;    #initialize eigenvectors\n&quot;, 
+    &quot;    v_list = []\n&quot;, 
+    &quot;    lambda_list = []\n&quot;, 
+    &quot;    diff_list = []\n&quot;, 
+    &quot;\n&quot;, 
+    &quot;    idx = 0\n&quot;, 
+    &quot;    v_init = np.zeros(r)\n&quot;, 
+    &quot;    v_init[-1] = 1\n&quot;, 
+    &quot;    v_list.append(v_init)\n&quot;, 
+    &quot;\n&quot;, 
+    &quot;    #initialize eigenvalues\n&quot;, 
+    &quot;    lambda_init = v_init.dot(A.dot(v_init))\n&quot;, 
+    &quot;    lambda_list.append(lambda_init)\n&quot;, 
+    &quot;\n&quot;, 
+    &quot;    diff_init = float(\&quot;inf\&quot;)\n&quot;, 
+    &quot;    diff_list.append(diff_init)\n&quot;, 
+    &quot;\n&quot;, 
+    &quot;    while diff_list[idx] &gt; converge_range:\n&quot;, 
+    &quot;        #new vector\n&quot;, 
+    &quot;        v_new = A.dot(v_list[idx])\n&quot;, 
+    &quot;\n&quot;, 
+    &quot;        if norm_indicator:\n&quot;, 
+    &quot;            v_new = v_new / np.linalg.norm(v_new)\n&quot;, 
+    &quot;\n&quot;, 
+    &quot;        v_list.append(v_new)\n&quot;, 
+    &quot;        lambda_new = v_new.dot(A.dot(v_new))\n&quot;, 
+    &quot;        lambda_list.append(lambda_new)\n&quot;, 
+    &quot;        diff = np.abs(lambda_new - lambda_list[idx])\n&quot;, 
+    &quot;        diff_list.append(diff)\n&quot;, 
+    &quot;        idx = idx + 1\n&quot;, 
+    &quot;\n&quot;, 
+    &quot;    print_log(idx, v_list, lambda_list, diff_list, file_path)\n&quot;, 
+    &quot;\n&quot;, 
+    &quot;    #plot lambda_list\n&quot;, 
+    &quot;    x = [i for i in range(idx+1)]\n&quot;, 
+    &quot;    if len(x) &gt; 20:\n&quot;, 
+    &quot;        x = x[:21]\n&quot;, 
+    &quot;        diff_list = diff_list[:21]\n&quot;, 
+    &quot;\n&quot;, 
+    &quot;    plt.plot(x, diff_list)\n&quot;, 
+    &quot;    plt.title(\&quot;Power Iteration Lambda Difference\&quot;)\n&quot;, 
+    &quot;    plt.xlabel('iterations')\n&quot;, 
+    &quot;    plt.ylabel('lambda difference')\n&quot;, 
+    &quot;    plt.savefig( file_path + \&quot;/Power_iteration_lambda_diff\&quot;)\n&quot;, 
+    &quot;    plt.show()\n&quot;, 
+    &quot;    plt.close()\n&quot;, 
+    &quot;    eigenvec = v_list[-1]\n&quot;, 
+    &quot;    eigenvec = eigenvec / np.linalg.norm(eigenvec)\n&quot;, 
+    &quot;    return eigenvec, lambda_list[-1]\n&quot;, 
+    &quot;\n&quot;, 
+    &quot;\n&quot;, 
+    &quot;\n&quot;, 
+    &quot;\n&quot;, 
+    &quot;\n&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false, 
+    &quot;pycharm&quot;: { 
+     &quot;name&quot;: &quot;#%%\n&quot; 
+    } 
+   } 
+  }, 
+  { 
+   &quot;cell_type&quot;: &quot;markdown&quot;, 
+   &quot;source&quot;: [ 
+    &quot;\n&quot; 
+   ], 
+   &quot;metadata&quot;: { 
+    &quot;collapsed&quot;: false 
+   } 
+  } 
+ ], 
+ &quot;metadata&quot;: { 
+  &quot;kernelspec&quot;: { 
+   &quot;display_name&quot;: &quot;Python 3&quot;, 
+   &quot;language&quot;: &quot;python&quot;, 
+   &quot;name&quot;: &quot;python3&quot; 
+  }, 
+  &quot;language_info&quot;: { 
+   &quot;codemirror_mode&quot;: { 
+    &quot;name&quot;: &quot;ipython&quot;, 
+    &quot;version&quot;: 2 
+   }, 
+   &quot;file_extension&quot;: &quot;.py&quot;, 
+   &quot;mimetype&quot;: &quot;text/x-python&quot;, 
+   &quot;name&quot;: &quot;python&quot;, 
+   &quot;nbconvert_exporter&quot;: &quot;python&quot;, 
+   &quot;pygments_lexer&quot;: &quot;ipython2&quot;, 
+   &quot;version&quot;: &quot;2.7.6&quot; 
+  } 
+ }, 
+ &quot;nbformat&quot;: 4, 
+ &quot;nbformat_minor&quot;: 0 
+}</span></pre>
+</body>
+</html>
