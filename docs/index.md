@@ -1,6 +1,5 @@
-![icerm](ICERM_logoCUBE_1000pxls.png) 
-#Summer@ICERM 2020: Efficient Eigensolvers And Their Applications
-
+# Summer@ICERM 2020: Efficient Eigensolvers And Their Applications
+<img src="ICERM_logoCUBE_1000pxls.png" width="200" height="200" />
 
 
 > Welcome to our webpage for Efficient Eigensolvers! blabla
