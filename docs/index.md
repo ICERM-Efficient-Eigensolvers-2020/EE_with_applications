@@ -12,7 +12,7 @@ We implemented two major kinds of eigensolvers:
 ### [Power Iteration](PowerIterationMethod.html)
 ### [Inverse Iteration with/without Shift]()
 
-### [QR Algorithm]()
+### [QR Algorithm](QR_Algorithm.html)
  
 We also introduced other variants involving different techniques
 ### [Rayleigh Quotient Iteration](RayleighQuotientIteration.html) 
