@@ -14,14 +14,18 @@ We implemented two major kinds of eigensolvers:
 
 ### [QR Algorithm]()
  
+We also introduced other variants involving different techniques
+### [Rayleigh Quotient Iteration]() 
 
 ## Webcrawler
-some introduction
+A common application for 
 
 
 
 ## Performance
+
 ### Hessenberg Reduction with Shift
+
 ![hessenshift](performance_compare_iteration_preversion.png)
 
  

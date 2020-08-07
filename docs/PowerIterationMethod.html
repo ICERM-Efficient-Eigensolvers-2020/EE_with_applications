@@ -13076,20 +13076,19 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-
 <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;jupyter nbconvert --to html yourNotebook.ipynb&#39;</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">tabulate</span> <span class="kn">import</span> <span class="n">tabulate</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">os</span>
-<span class="n">info_list</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">def</span> <span class="nf">print_log</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">v_list</span><span class="p">,</span> <span class="n">lambda_list</span><span class="p">,</span> <span class="n">diff_list</span><span class="p">,</span> <span class="n">file_path</span><span class="p">):</span>
+    
+<span class="k">def</span> <span class="nf">print_log</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">v_list</span><span class="p">,</span> <span class="n">lambda_list</span><span class="p">,</span> <span class="n">diff_list</span><span class="p">):</span>
     <span class="n">info_list</span> <span class="o">=</span> <span class="p">[[</span><span class="n">i</span><span class="p">,</span> <span class="n">v_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">lambda_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">diff_list</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">idx</span><span class="p">)]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">info_list</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">(</span><span class="n">info_list</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;iteration&quot;</span><span class="p">,</span><span class="s2">&quot;eigenvector&quot;</span><span class="p">,</span> <span class="s2">&quot;eigenvalue&quot;</span><span class="p">,</span><span class="s2">&quot;lambda_diff&quot;</span><span class="p">]))</span>
 </pre></div>
 
     </div>
@@ -13101,7 +13100,7 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Power-Iteration-Method">Power Iteration Method<a class="anchor-link" href="#Power-Iteration-Method">&#182;</a></h1><p>Power Iteration is utilizing the convergence of the sequence</p>
-<h5 id="$$-\frac{x}{||x||},-\frac{Ax}{||Ax||},-\frac{A^2x}{||A^2x|},-\frac{A^3x}{||A^3x||},-\cdots$$">$$ \frac{x}{||x||}, \frac{Ax}{||Ax||}, \frac{A^2x}{||A^2x|}, \frac{A^3x}{||A^3x||}, \cdots$$<a class="anchor-link" href="#$$-\frac{x}{||x||},-\frac{Ax}{||Ax||},-\frac{A^2x}{||A^2x|},-\frac{A^3x}{||A^3x||},-\cdots$$">&#182;</a></h5><p>For any matrix $$A$$ with a unique dominant eigenvalue, the sequence would converge to $$A$$'s eigenvector corresponding to its dominant eigenvalue.</p>
+<h5 id="$$-\frac{x}{||x||},-\frac{Ax}{||Ax||},-\frac{A^2x}{||A^2x|},-\frac{A^3x}{||A^3x||},-\cdots$$">$$ \frac{x}{||x||}, \frac{Ax}{||Ax||}, \frac{A^2x}{||A^2x|}, \frac{A^3x}{||A^3x||}, \cdots$$<a class="anchor-link" href="#$$-\frac{x}{||x||},-\frac{Ax}{||Ax||},-\frac{A^2x}{||A^2x|},-\frac{A^3x}{||A^3x||},-\cdots$$">&#182;</a></h5><p>For any matrix $A$ with a unique dominant eigenvalue, the sequence would converge to $A$'s eigenvector corresponding to its dominant eigenvalue.</p>
 <p>To calculate an estimated natural eigenvalue for a give vector, we use Rayleigh Quotient to measure the value making this vector like an eigenvector the most.</p>
 $$ r(x) = \frac{x^T A x}{x^T x} $$
 </div>
@@ -13109,64 +13108,33 @@ $$ r(x) = \frac{x^T A x}{x^T x} $$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">PowerMethod</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">norm_indicator</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">converge_range</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span> <span class="n">file_path</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
-
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">PowerMethod</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">convergence_condition</span><span class="o">=</span><span class="mf">0.00001</span><span class="p">):</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span>
 
     <span class="k">if</span> <span class="n">r</span> <span class="o">!=</span> <span class="n">c</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;not a square matrix&quot;</span><span class="p">)</span>
-
-    <span class="c1">#initialize eigenvectors</span>
-    <span class="n">v_list</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">lambda_list</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">diff_list</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">v_init</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
-    <span class="n">v_init</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">v_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v_init</span><span class="p">)</span>
-
-    <span class="c1">#initialize eigenvalues</span>
-    <span class="n">lambda_init</span> <span class="o">=</span> <span class="n">v_init</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v_init</span><span class="p">))</span>
-    <span class="n">lambda_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lambda_init</span><span class="p">)</span>
-
-    <span class="n">diff_init</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
-    <span class="n">diff_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">diff_init</span><span class="p">)</span>
-
-    <span class="k">while</span> <span class="n">diff_list</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">converge_range</span><span class="p">:</span>
-        <span class="c1">#new vector</span>
-        <span class="n">v_new</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v_list</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
-
-        <span class="k">if</span> <span class="n">norm_indicator</span><span class="p">:</span>
-            <span class="n">v_new</span> <span class="o">=</span> <span class="n">v_new</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">v_new</span><span class="p">)</span>
-
-        <span class="n">v_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v_new</span><span class="p">)</span>
-        <span class="n">lambda_new</span> <span class="o">=</span> <span class="n">v_new</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v_new</span><span class="p">))</span>
-        <span class="n">lambda_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lambda_new</span><span class="p">)</span>
-        <span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">lambda_new</span> <span class="o">-</span> <span class="n">lambda_list</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
-        <span class="n">diff_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
+    <span class="c1"># initialize eigenvectors</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+    <span class="n">v</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="c1"># initialize eigenvalues</span>
+    <span class="n">lam</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="n">idx</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="c1"># new vector</span>
+        <span class="n">v_new</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+        <span class="n">v_new</span> <span class="o">=</span> <span class="n">v_new</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">v_new</span><span class="p">)</span>
 
-    <span class="n">print_log</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">v_list</span><span class="p">,</span> <span class="n">lambda_list</span><span class="p">,</span> <span class="n">diff_list</span><span class="p">,</span> <span class="n">file_path</span><span class="p">)</span>
+        <span class="n">lam_new</span> <span class="o">=</span> <span class="n">v_new</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v_new</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">lam_new</span> <span class="o">-</span> <span class="n">lam</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">convergence_condition</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="n">lam</span> <span class="o">=</span> <span class="n">lam_new</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">v_new</span>
+    <span class="k">return</span> <span class="n">v_new</span><span class="p">,</span> <span class="n">lam_new</span><span class="p">,</span> <span class="n">idx</span>
 
-    <span class="c1">#plot lambda_list</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:</span><span class="mi">21</span><span class="p">]</span>
-        <span class="n">diff_list</span> <span class="o">=</span> <span class="n">diff_list</span><span class="p">[:</span><span class="mi">21</span><span class="p">]</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">diff_list</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Power Iteration Lambda Difference&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;iterations&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;lambda difference&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-    <span class="n">eigenvec</span> <span class="o">=</span> <span class="n">v_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">eigenvec</span> <span class="o">=</span> <span class="n">eigenvec</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">eigenvec</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">eigenvec</span><span class="p">,</span> <span class="n">lambda_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.5</span><span class="p">,</span><span class="o">.</span><span class="mi">5</span><span class="p">],[</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span><span class="mf">1.5</span><span class="p">]])</span>
@@ -13187,7 +13155,16 @@ $$ r(x) = \frac{x^T A x}{x^T x} $$
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[[0, array([0., 1.]), 1.5, inf], [1, array([0.31622777, 0.9486833 ]), 1.7999999999999998, 0.2999999999999998], [2, array([0.51449576, 0.85749293]), 1.9411764705882355, 0.14117647058823568], [3, array([0.61394061, 0.78935222]), 1.9846153846153847, 0.04343891402714917], [4, array([0.66162164, 0.74983786]), 1.9961089494163422, 0.011493564800957534], [5, array([0.68467546, 0.72884807]), 1.9990243902439024, 0.002915440827560234], [6, array([0.69597329, 0.71806768]), 1.9997559189650964, 0.0007315287211939747], [7, array([0.7015611 , 0.71260931]), 1.999938968568813, 0.0001830496037165119]]
+<pre>  iteration  eigenvector                eigenvalue    lambda_diff
+-----------  -----------------------  ------------  -------------
+          0  [0. 1.]                       1.5      inf
+          1  [0.31622777 0.9486833 ]       1.8        0.3
+          2  [0.51449576 0.85749293]       1.94118    0.141176
+          3  [0.61394061 0.78935222]       1.98462    0.0434389
+          4  [0.66162164 0.74983786]       1.99611    0.0114936
+          5  [0.68467546 0.72884807]       1.99902    0.00291544
+          6  [0.69597329 0.71806768]       1.99976    0.000731529
+          7  [0.7015611  0.71260931]       1.99994    0.00018305
 </pre>
 </div>
 </div>
@@ -13213,7 +13190,7 @@ $$ r(x) = \frac{x^T A x}{x^T x} $$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span> 
