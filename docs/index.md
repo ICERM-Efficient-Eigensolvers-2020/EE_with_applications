@@ -10,15 +10,24 @@ We implemented two major kinds of eigensolvers:
 
 ## Eigensolvers
 ### [Power Iteration](PowerIterationMethod.html)
+
 ### [Inverse Iteration with/without Shift]()
 
 ### [QR Algorithm](QR_Algorithm.html)
  
-We also introduced other variants involving different techniques
+We also introduced other variants involving different techniques.
 ### [Rayleigh Quotient Iteration](RayleighQuotientIteration.html) 
 
 ## Webcrawler
-A common application for 
+A common application for eigensolvers, more specifically, the Power Iteration Method,
+is PageRank. By crawling all the subpages under a given domain, we generated a directed 
+graph with vertices representing subpages and directed edges representing linkages.
+
+### https://icerm.brown.edu/
+![ICERM](ICERM100_adhMatrix.png)
+
+### https://cnn.com/specials/
+![CNN](CNN200_adhMatrix.png) 
 
 
 
