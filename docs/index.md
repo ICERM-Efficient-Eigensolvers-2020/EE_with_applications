@@ -10,7 +10,7 @@ We implemented two major kinds of eigensolvers:
 
 
 ## Eigensolvers
-[#### Power Iteration](PowerIterationMethod.ipynb)
+####[Power Iteration](PowerIterationMethod.html)
 #### Inverse Iteration with/without Shift
 
 #### QR Algorithm
