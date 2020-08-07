@@ -15,7 +15,7 @@ We implemented two major kinds of eigensolvers:
 ### [QR Algorithm]()
  
 We also introduced other variants involving different techniques
-### [Rayleigh Quotient Iteration]() 
+### [Rayleigh Quotient Iteration](RayleighQuotientIteration.html) 
 
 ## Webcrawler
 A common application for 
