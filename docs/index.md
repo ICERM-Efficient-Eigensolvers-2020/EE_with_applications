@@ -1,6 +1,8 @@
 # Summer@ICERM 2020: Efficient Eigensolvers And Their Applications
 <img src="ICERM_logoCUBE_1000pxls.png" width="200" />
 
+![performance gif](gif_without_Hessenberg.gif)
+
 > Welcome to our webpage for Efficient Eigensolvers! 
 > This summer, we are working on solving eigenvectors and eigenvalues for a given matrix.
 > Based on the non-existance of the closed formula for the root of an arbitrary polynomial with 
@@ -51,9 +53,9 @@ where each value could be regarded as an **importance score**.
 
 #### Let's rank!
 * https://icerm.brown.edu/ : [Page Rank Scores](icerm_page_rank.csv)
-<img src="ICERM100_adhMatrix.png" width="250" />
+<img src="ICERM100_adhMatrix.png" width="300" />
 * https://cnn.com/specials/ : [Page Rank Scores](cnn_page_rank.csv) 
-<img src="CNN200_adhMatrix.png" width="250" />
+<img src="CNN200_adhMatrix.png" width="300" />
 
 ## Performance Experiments
 ### Hessenberg Reduction with Shift
