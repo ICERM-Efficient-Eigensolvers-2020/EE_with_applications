@@ -1,8 +1,9 @@
-<img src="ICERM_logoCUBE_1000pxls.png.png", width="150">
+:-----:|:-----:
+![icerm](ICERM_logoCUBE_1000pxls.png)|
 # Summer@ICERM 2020: Efficient Eigensolvers And Their Applications
  
 :-----:|:-----:
-![shiftgif](shift.gif)  |  ![hessenberg](hessenberg.gif)
+ ![hessenberg](hessenberg.gif) | ![shiftgif](shift.gif)
 
 > Welcome to our webpage for Efficient Eigensolvers! 
 > This summer, we are working on solving eigenvectors and eigenvalues for a given matrix.
