@@ -11,33 +11,7 @@ import numpy as np
 from scipy import interpolate
 
 import seaborn as sns
-"""
-sns.set(font='Franklin Gothic Book',
-        rc={
- 'axes.axisbelow': False,
- 'axes.edgecolor': 'lightgrey',
- 'axes.grid': False,
- 'axes.labelcolor': 'dimgrey',
- 'axes.spines.right': False,
- 'axes.spines.top': False,
- 'figure.facecolor': 'white',
- 'lines.solid_capstyle': 'round',
- 'patch.edgecolor': 'w',
- 'patch.force_edgecolor': True,
- 'text.color': 'dimgrey',
- 'xtick.bottom': False,
- 'xtick.color': 'dimgrey',
- 'xtick.direction': 'out',
- 'xtick.top': False,
- 'ytick.colo': 'dimgrey',
- 'ytick.direction': 'out',
- 'ytick.left': False,
- 'ytick.right': False})
 
-sns.set_context("notebook", rc={"font.size":16,
-                                "axes.titlesize":20,
-                                "axes.labelsize":18})
-"""
 if __name__ == '__main__':
 
     t = time.localtime()
@@ -118,7 +92,7 @@ if __name__ == '__main__':
         ax.yaxis.set_tick_params(length=0)
         sns.despine(left=True, bottom=True)
     coloridx = 6
-    """
+
     for k, v in Hessen_dict.items():
         #axs[0].plot(dim_list, v)
         x_new = np.linspace(2, 2 + step *(top_dim-1), step *100* top_dim)
@@ -129,7 +103,7 @@ if __name__ == '__main__':
         axs[1].legend(frameon=False)
         #ax.annotate( xy=(dim_list[-1],v[-1]), xytext=(5,0), textcoords='offset points', s=f'{k} w Hessenberg', va='center')
         coloridx = coloridx + 1
-    """
+
     for k, v in No_Hessen_dict.items():
         #axs[1].plot(dim_list, v)
         x_new = np.linspace(2, 2 + step*(top_dim-1) , step *100* top_dim)

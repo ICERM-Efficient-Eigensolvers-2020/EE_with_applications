@@ -1,41 +1,76 @@
 # Summer@ICERM 2020: Efficient Eigensolvers And Their Applications
-<img src="ICERM_logoCUBE_1000pxls.png" width="200" height="200" />
+<img src="ICERM_logoCUBE_1000pxls.png" width="200" />
 
-> Welcome to our webpage for Efficient Eigensolvers! blabla
+> Welcome to our webpage for Efficient Eigensolvers! 
+> This summer, we are working on solving eigenvectors and eigenvalues for a given matrix.
+> Based on the non-existance of the closed formula for the root of an arbitrary polynomial with 
+> degree 5 or more, we conclude there is no eigensolver that could solve
+> the eigenvalues for an arbitrary matrix in finite steps even given 
+> the perfect accuracy.
+>
+> Numerically, eigensolvers must be iterative.
 
-We implemented two major kinds of eigensolvers:
-* Based on converged sequences
-* Based on Eigenvalue-revealing factorizations
+In this project, we implemented variant [eigensovlers](#eigensolvers), built up [web crawlers](#webcrawler) with
+ directed graph generator, constructed [performance comparison](#performance-experiments) code frame.
+ 
+For numerical experiments results, we collected page rank scores for 
+ subpages under several domains: https://icerm.brown.edu, https://en.wikipedia.com/wiki/,
+ https://cnn.com/, etc. You can find the adjacency matrices and page rank results
+  [here](#lets-rank).
+
+ To see how preprocess of a matrix like reduction could save the run time,
+ we measured **convergence rates** for different eigensolvers with and without
+ **Hessenberg Reduction**.
+ 
+ **Hilbert matrix**, a nightmare for generations of scientists working on 
+ improving the time complexity of the eigensolver, is performance-checked by our code.
+ We visualized how bad our eigensolers are when facing this accuracy dilemma
+ cause by Hilbert matrix.
 
 
 ## Eigensolvers
-### [Power Iteration](PowerIterationMethod.html)
-
-### [Inverse Iteration with/without Shift]()
-
-### [QR Algorithm](QR_Algorithm.html)
- 
-We also introduced other variants involving different techniques.
-### [Rayleigh Quotient Iteration](RayleighQuotientIteration.html) 
+We implemented two major kinds of eigensolvers:
+* Some eigensolvers are based on converged sequences.
+    * [Power Iteration](PowerIterationMethod.html)
+    * [Inverse Iteration with/without Shift]()
+* Some eigensolvers are based on Eigenvalue-revealing factorizations.
+For example, Schur diagonalization.
+    * [QR Algorithm](QR_Algorithm.html)
+    
+We also introduced other variants involving different techniques, [Rayleigh Quotient Iteration](RayleighQuotientIteration.html). 
 
 ## Webcrawler
-A common application for eigensolvers, more specifically, the Power Iteration Method,
-is PageRank. By crawling all the subpages under a given domain, we generated a directed 
-graph with vertices representing subpages and directed edges representing linkages.
+A common application for eigensolvers, more specifically, Power Iteration Method,
+is **PageRank**. By crawling all the subpages under a given domain, we generated a directed 
+graph with vertices representing subpages and directed edges representing linkages. 
+By manipulating this directed graph's adjacency matrix and feeding it
+into the eigensolver, we could converge to the dominant eigenvalue's eigenvectors,
+where each value could be regarded as an **importance score**.
+[webcrawler](webScraper.html)
+#### Let's rank!
+* https://icerm.brown.edu/ [page ranks](icerm_page_rank.csv) ![ICERM](ICERM100_adhMatrix.png)
+* https://cnn.com/specials/ [page ranks](cnn_page_rank.csv) ![CNN](CNN200_adhMatrix.png) 
 
-### https://icerm.brown.edu/
-![ICERM](ICERM100_adhMatrix.png)
 
-### https://cnn.com/specials/
-![CNN](CNN200_adhMatrix.png) 
-
-
-
-## Performance
-
+## Performance Experiments
 ### Hessenberg Reduction with Shift
 
+The time complexity for each plain eigensolver is O(n^3), which is problematic 
+ for actual applications -- when we are crawling 10 million pages and processing
+ a 10 million dimensional matrix -- the time consumed is not fun. 
+ Hessenberg comes to help.
 ![hessenshift](performance_compare_iteration_preversion.png)
+
+### Hilbert Matrix
+Let's face the [evil hilbert matrix](HilbertExper.html).
+![Hilbert](EigensolversOnHilbert.png)
+
+## Side notes:
+Also, if you want to know how to 
+* [generate a random matrix](matricesGenerator.html)
+* implement [adaptive page rank algorithm]()
+* [manipulate the adjacency matrix]() in Page Rank Algorithm
+* [test different algorithms' correctness]()
 
  
 

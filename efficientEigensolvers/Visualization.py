@@ -3,7 +3,7 @@ import pandas as pd
 import os
 import sns
 THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
-csv_name = '/Users/yuqingliu/PycharmProjects/ICERM_ORG/EE_with_applications/efficientEigensolvers/test_result_july17/mathworld_wolfram_com/200/PowerMethod_page_rank.csv'
+csv_name = '/Users/yuqingliu/PycharmProjects/ICERM_ORG/EE_with_applications/efficientEigensolvers/test_result_july17/mathworld_wolfram_com/200/icerm_page_rank.csv'
 
 
 df = pd.read_csv(csv_name, header = None ,quoting=2)
