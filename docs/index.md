@@ -1,6 +1,6 @@
 <div id="container" style="white-space:nowrap">
     <div id="image" style="display:inline;">
-        <img src="ICERM_logoCUBE_1000pxls.png", width="150">
+        <img align="left", src="ICERM_logoCUBE_1000pxls.png.png", width="150">
     </div>
     <div id="texts" style="display:inline; white-space:nowrap;"> 
         <h1>Summer@ICERM 2020: Efficient Eigensolvers And Their Applications </h1>
@@ -8,11 +8,11 @@
 </div>​
  
  <div id="banner">
-    <div class="inline-block">
-        <img src ="shift.gif">
+    <div class="inline-block", >
+        <img align="left",src ="shift.gif", width="150">
     </div>
     <div class="inline-block">
-        <img src ="hessenberg.gif">
+        <img align="right", src ="hessenberg.gif", width="150">
     </div>
 </div>
 
