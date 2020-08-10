@@ -23,21 +23,21 @@ For numerical experiments results, we collected page rank scores for
  **Hessenberg Reduction**.
  
  **Hilbert matrix**, a nightmare for generations of scientists working on 
- improving the time complexity of the eigensolver, is performance-checked by our code.
+ improving the time complexity of the eigensolver, is revisited by our code.
  We visualized how bad our eigensolers are when facing this accuracy dilemma
- cause by Hilbert matrix.
+ caused by Hilbert matrix.
 
 
 ## Eigensolvers
 We implemented two major kinds of eigensolvers:
-* Some eigensolvers are based on converged sequences.
+* based on converged sequences.
     * [Power Iteration](PowerIterationMethod.html)
     * [Inverse Iteration with/without Shift]()
-* Some eigensolvers are based on Eigenvalue-revealing factorizations.
+* based on Eigenvalue-revealing factorizations.
 For example, Schur diagonalization.
     * [QR Algorithm](QR_Algorithm.html)
     
-We also introduced other variants involving different techniques, [Rayleigh Quotient Iteration](RayleighQuotientIteration.html). 
+We also introduced other variants involving different techniques, e.g. [Rayleigh Quotient Iteration](RayleighQuotientIteration.html). 
 
 ## Webcrawler
 A common application for eigensolvers, more specifically, Power Iteration Method,
@@ -64,11 +64,11 @@ The time complexity for each plain eigensolver is O(n^3), which is problematic
 ![hessenshift](performance_compare_iteration_preversion.png)
 
 ### Hilbert Matrix
-Let's face the [evil hilbert matrix](HilbertExper.html).
+Let's face the [tricky Hilbert matrix](HilbertExper.html).
 ![Hilbert](EigensolversOnHilbert.png)
 
 ## Side notes:
-Also, if you want to know how to 
+if you also want to know how to ...
 * [generate a random matrix](matricesGenerator.html)
 * implement [adaptive page rank algorithm]()
 * [manipulate the adjacency matrix]() in Page Rank algorithms
