@@ -1,14 +1,21 @@
-<div class="row">
-  <div class="column">
-    <img src="ICERM_logoCUBE_1000pxls.png" width="100">
-  </div>
-  <div class="column">
-   <h1>Summer@ICERM 2020: Efficient Eigensolvers And Their Applications </h1>
-  </div>
-</div>
+<div id="container" style="white-space:nowrap">
+    <div id="image" style="display:inline;">
+        <img src="ICERM_logoCUBE_1000pxls.png"/>
+    </div>
+    <div id="texts" style="display:inline; white-space:nowrap;"> 
+        <h1>Summer@ICERM 2020: Efficient Eigensolvers And Their Applications </h1>
+    </div>
+</div>​
  
-![title gif](ezgif.com-video-to-gif.gif)
-<img src="ezgif.com-video-to-gif.gif" width="150" />
+ 
+ <div class="row">
+  <div class="column">
+    <img src="shift.gif" width="200">
+  </div>
+  <div class="column">
+    <img src="hessenberg.gif" width="200">
+   </div>
+</div>
 
 > Welcome to our webpage for Efficient Eigensolvers! 
 > This summer, we are working on solving eigenvectors and eigenvalues for a given matrix.
