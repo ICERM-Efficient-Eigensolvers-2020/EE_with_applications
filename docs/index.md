@@ -50,9 +50,10 @@ where each value could be regarded as an **importance score**.
 
 
 #### Let's rank!
-* https://icerm.brown.edu/ : [Page Rank Scores](icerm_page_rank.csv) ![ICERM](ICERM100_adhMatrix.png)
-* https://cnn.com/specials/ : [Page Rank Scores](cnn_page_rank.csv) ![CNN](CNN200_adhMatrix.png) 
-
+* https://icerm.brown.edu/ : [Page Rank Scores](icerm_page_rank.csv)
+<img src="ICERM100_adhMatrix.png" width="250" />
+* https://cnn.com/specials/ : [Page Rank Scores](cnn_page_rank.csv) 
+<img src="CNN200_adhMatrix.png" width="250" />
 
 ## Performance Experiments
 ### Hessenberg Reduction with Shift
