@@ -1,8 +1,8 @@
-:-----:|:-----:
-# Summer@ICERM 2020: Efficient Eigensolvers And Their Applications | ![icerm](ICERM_logoCUBE_1000pxls.png)
+
+# Summer@ICERM 2020: Efficient Eigensolvers And Their Applications 
  
-:-----:|:-----:
- ![hessenberg](hessenberg.gif) | ![shiftgif](shift.gif)
+:-----:|:-----:|:-----:
+ ![hessenberg](hessenberg.gif) | ![shiftgif](shift.gif)|| ![icerm](ICERM_logoCUBE_1000pxls.png)
 
 > Welcome to our webpage for Efficient Eigensolvers! 
 >
