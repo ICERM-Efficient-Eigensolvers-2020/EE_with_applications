@@ -1,11 +1,11 @@
 :-----:|:-----:
-![icerm](ICERM_logoCUBE_1000pxls.png)|
-# Summer@ICERM 2020: Efficient Eigensolvers And Their Applications
+# Summer@ICERM 2020: Efficient Eigensolvers And Their Applications | ![icerm](ICERM_logoCUBE_1000pxls.png)
  
 :-----:|:-----:
  ![hessenberg](hessenberg.gif) | ![shiftgif](shift.gif)
 
 > Welcome to our webpage for Efficient Eigensolvers! 
+>
 > This summer, we are working on solving eigenvectors and eigenvalues for a given matrix.
 > Based on the non-existance of the closed formula for the root of an arbitrary polynomial with 
 > degree 5 or more, we conclude there is no eigensolver that could solve
