@@ -42,14 +42,16 @@ We also introduced other variants involving different techniques, [Rayleigh Quot
 ## Webcrawler
 A common application for eigensolvers, more specifically, Power Iteration Method,
 is **PageRank**. By crawling all the subpages under a given domain, we generated a directed 
-graph with vertices representing subpages and directed edges representing linkages. 
+graph with vertices representing subpages and directed edges representing linkages by
+[webcrawler](webScraper.html). 
 By manipulating this directed graph's adjacency matrix and feeding it
 into the eigensolver, we could converge to the dominant eigenvalue's eigenvectors,
 where each value could be regarded as an **importance score**.
-[webcrawler](webScraper.html)
+
+
 #### Let's rank!
-* https://icerm.brown.edu/ [page ranks](icerm_page_rank.csv) ![ICERM](ICERM100_adhMatrix.png)
-* https://cnn.com/specials/ [page ranks](cnn_page_rank.csv) ![CNN](CNN200_adhMatrix.png) 
+* https://icerm.brown.edu/ : [Page Rank Scores](icerm_page_rank.csv) ![ICERM](ICERM100_adhMatrix.png)
+* https://cnn.com/specials/ : [Page Rank Scores](cnn_page_rank.csv) ![CNN](CNN200_adhMatrix.png) 
 
 
 ## Performance Experiments
@@ -58,7 +60,7 @@ where each value could be regarded as an **importance score**.
 The time complexity for each plain eigensolver is O(n^3), which is problematic 
  for actual applications -- when we are crawling 10 million pages and processing
  a 10 million dimensional matrix -- the time consumed is not fun. 
- Hessenberg comes to help.
+ [Hessenberg Reduction](comparePerfDriver.html) comes to help.
 ![hessenshift](performance_compare_iteration_preversion.png)
 
 ### Hilbert Matrix
@@ -69,8 +71,8 @@ Let's face the [evil hilbert matrix](HilbertExper.html).
 Also, if you want to know how to 
 * [generate a random matrix](matricesGenerator.html)
 * implement [adaptive page rank algorithm]()
-* [manipulate the adjacency matrix]() in Page Rank Algorithm
-* [test different algorithms' correctness]()
+* [manipulate the adjacency matrix]() in Page Rank algorithms
+* [test the correctness]() for different algorithms
 
  
 
