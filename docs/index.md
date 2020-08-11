@@ -24,7 +24,7 @@ For numerical experiments results, we collected page rank scores for
  https://cnn.com/, etc. You can find the adjacency matrices and page rank results
   [here](#lets-rank).
 
- To see how preprocess of a matrix like reduction could save the run time,
+ To see how preprocessing a matrix like applying reduction could save the run time,
  we measured **convergence rates** for different eigensolvers with and without
  **Hessenberg Reduction**.
  
@@ -38,7 +38,7 @@ For numerical experiments results, we collected page rank scores for
 We implemented two major kinds of eigensolvers:
 * based on converged sequences.
     * [Power Iteration](PowerIterationMethod.html)
-    * [Inverse Iteration with/without Shift]()
+    * [Inverse Iteration without](Inverse_Iteration.html)/[with Shift](Inverse_Iteration_w_shift.html)
 * based on Eigenvalue-revealing factorizations.
 For example, Schur diagonalization.
     * [QR Algorithm](QR_Algorithm.html)
