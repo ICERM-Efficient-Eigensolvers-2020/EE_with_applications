@@ -30,7 +30,7 @@ For numerical experiments results, we collected page rank scores for
  
  **Hilbert matrix**, a nightmare for generations of scientists working on 
  improving the time complexity of the eigensolver, is revisited by our code.
- We visualized how bad our eigensolers are when facing this accuracy dilemma
+ We visualized how bad our eigensolvers are when facing this accuracy dilemma
  caused by Hilbert matrix.
 
 
