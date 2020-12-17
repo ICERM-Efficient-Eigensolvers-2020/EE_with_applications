@@ -3,8 +3,8 @@
  
 # Summer@ICERM 2020: Efficient Eigensolvers And Their Applications 
 
-:-----:|:-----:|------:
- Yuqing Liu | Kelly Rivera | Jordan Fox
+:-----:|:-----:|-----:
+ **Yuqing Liu** | **Kelly Rivera** | **Jordan Fox**
  University of Michigan Ann Arbor | St. Thomas University | Western Carolina University
  
 :-----:|:-----:
