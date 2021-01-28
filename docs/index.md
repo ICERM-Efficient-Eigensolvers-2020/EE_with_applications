@@ -23,7 +23,7 @@
 >
 > Numerically, eigensolvers must be iterative.
 
-In this project, we implemented variant [eigensovlers](#eigensolvers), built up [web crawlers](#webcrawler) with
+In this project, we implemented variant [eigensolvers](#eigensolvers), built up [web crawlers](#webcrawler) with
  directed graph generator, constructed [performance comparison](#performance-experiments) code frame.
  
 For numerical experiments results, we collected page rank scores for 
