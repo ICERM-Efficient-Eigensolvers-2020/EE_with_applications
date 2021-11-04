@@ -138,3 +138,5 @@ initialize a unit vector v_0 with n*1
  ###### ****Converge Process Print :**** 
  
 `` def print_log(index, eigenvector_list, eigenvalue_list, err_list)``
+
+### The Final Report of Our Research: [Efficient Eigensolvers & Their Applications](https://icerm.brown.edu/summerug/2020/studentprojects/ICERM_Efficient_Eigensolvers.pdf)
